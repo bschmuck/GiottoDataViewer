@@ -1,0 +1,9 @@
+{
+	"giotto_rest_api":{
+		"server":"buildingdepot.andrew.cmu.edu",
+		"port":"5001",
+		"api_prefix":""
+	},
+
+	"gateway":"Machine Learning"
+}

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Quick Test with Demo Scripts &mdash; GiottoDataViewer for iOS 1.0 documentation</title>
+    <title>Quick Start &mdash; GiottoDataViewer for iOS 1.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -30,7 +30,7 @@
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>GiottoDataViewer for iOS 1.0 documentation</span></a></h1>
-        <h2 class="heading"><span>Quick Test with Demo Scripts</span></h2>
+        <h2 class="heading"><span>Quick Start</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
@@ -46,19 +46,59 @@
       <div class="content">
         
         
-  <div class="section" id="quick-test-with-demo-scripts">
-<h1>Quick Test with Demo Scripts<a class="headerlink" href="#quick-test-with-demo-scripts" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
 <p>The page explains how you can test the GiottoDataViewer with minimal steps.</p>
+<div class="section" id="building-depot">
+<h2>Building Depot<a class="headerlink" href="#building-depot" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Install BuildingDepot</li>
-<li>Copy pythons scripts in demo_script folder to a server hosting BuildingDepot.</li>
-<li>Run add_demo_sensors.py to register sensors in BuildingDepot.</li>
-<li>Run dummy_sensor.py. This script sends dummy data to BuildingDepot.</li>
-<li>Build GiottoDataViewer as described in <a class="reference internal" href="build.html"><em>Build</em></a>.</li>
-<li>Configure BuidingDepot parameters in the iOS app as described in <a class="reference internal" href="setup.html"><em>Setup</em></a>.</li>
-<li>Put <em>Room1</em> in the location emulation in the Setting tab of GiottoDataViwer</li>
-<li>You should see a list of devices in the Devices tab. If it does not work, check the Log tab to see what is the problem.</li>
+<li>Install BuildingDepot with demo database</li>
+<li>Copy pythons scripts in demo_script folder to a server hosting BuildingDepot</li>
+<li>Open giotto_setting.json</li>
+<li>Write Building Depot&#8217;s sever address in giotto_rest_api&gt;server.</li>
+<li>Run dummy_sensor.py <code class="docutils literal"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">dummy_sensor.py</span></code> This script continuously sends dummy data to sensors in Building Depot</li>
 </ol>
+</div>
+<div class="section" id="giottodataviewer">
+<h2>GiottoDataViewer<a class="headerlink" href="#giottodataviewer" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Build</dt>
+<dd><ol class="first arabic simple">
+<li>Create a local copy of this project</li>
+<li>Install <a class="reference external" href="https://cocoapods.org">CocoaPods</a> if you haven&#8217;t done it already</li>
+<li>Download Pod libraries at the project directory by executing pod install <code class="docutils literal"><span class="pre">$</span> <span class="pre">pod</span> <span class="pre">install</span></code></li>
+</ol>
+<p class="last">#. Open <strong>GiottoDataViewer.xcworkspace</strong> (not GiottoDataViewer.xcodeproj), build
+and install to an iPhone</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Configure Parameters</dt>
+<dd><ol class="first last arabic simple">
+<li>Open Settings tab in the iPhone app</li>
+<li>Tap Building Depot Server</li>
+<li>Configure Building Depot&#8217;s address (e.g., <code class="docutils literal"><span class="pre">https://buildingdepot.cmu.edu</span></code>)</li>
+<li>Tap Settings at the top left corner</li>
+<li>Tap Location Emulation</li>
+<li>Put <code class="docutils literal"><span class="pre">Room1</span></code> in the text field</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Browse</dt>
+<dd><ol class="first last arabic simple">
+<li>Open Devices tab</li>
+<li>You should see a list of devices (If it does not work, check the Log tab to see what is the problem)</li>
+<li>Tap one of the devices to see sensor readings</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
 </div>
 
 

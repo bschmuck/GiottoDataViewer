@@ -13,5 +13,7 @@
     IBOutlet UITextField* _addressTextField;
     IBOutlet UITextField* _portTextField;
     IBOutlet UITextField* _apiPrefixTextField;
+    IBOutlet UITextField* _oauthAppIdTextField;
+    IBOutlet UITextField* _oauthAppKeyTextField;
 }
 @end

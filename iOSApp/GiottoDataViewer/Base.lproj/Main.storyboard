@@ -186,13 +186,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IP Address or Server Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Amr-d4-LnI">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://buildingdepot.example.edu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Amr-d4-LnI">
                                                     <rect key="frame" x="113" y="8" width="479" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFM-1H-omo">
-                                                    <rect key="frame" x="34" y="11" width="63" height="20.5"/>
+                                                    <rect key="frame" x="34" y="11" width="63" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -251,7 +251,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="/service/api/v1/" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="isD-wA-2P6">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="/api" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="isD-wA-2P6">
                                                     <rect key="frame" x="113" y="8" width="479" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -274,6 +274,75 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="OAuth" id="x6J-Vm-dpx">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Zqb-Qu-Mjh">
+                                        <rect key="frame" x="0.0" y="295.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zqb-Qu-Mjh" id="Mlc-mZ-SH0">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="OAuth Applicatoni ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ArB-9T-lIb">
+                                                    <rect key="frame" x="113" y="8" width="479" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksP-hf-BoG">
+                                                    <rect key="frame" x="80.5" y="11" width="16.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ArB-9T-lIb" firstAttribute="left" secondItem="ksP-hf-BoG" secondAttribute="rightMargin" constant="16" id="3fA-Ip-XRn"/>
+                                                <constraint firstItem="ArB-9T-lIb" firstAttribute="trailing" secondItem="Mlc-mZ-SH0" secondAttribute="trailingMargin" id="4Nr-DA-V4O"/>
+                                                <constraint firstItem="ArB-9T-lIb" firstAttribute="leading" secondItem="ksP-hf-BoG" secondAttribute="trailing" constant="16" id="6su-84-vhQ"/>
+                                                <constraint firstItem="ArB-9T-lIb" firstAttribute="top" secondItem="Mlc-mZ-SH0" secondAttribute="topMargin" id="Cen-Li-oLJ"/>
+                                                <constraint firstItem="ksP-hf-BoG" firstAttribute="leading" secondItem="Mlc-mZ-SH0" secondAttribute="leadingMargin" constant="9" id="D8a-2R-ird"/>
+                                                <constraint firstItem="ArB-9T-lIb" firstAttribute="top" secondItem="Mlc-mZ-SH0" secondAttribute="topMargin" id="VP9-Nc-ns3"/>
+                                                <constraint firstItem="ArB-9T-lIb" firstAttribute="leading" secondItem="Mlc-mZ-SH0" secondAttribute="leadingMargin" constant="105" id="YUM-cJ-i1B"/>
+                                                <constraint firstItem="ksP-hf-BoG" firstAttribute="top" secondItem="Mlc-mZ-SH0" secondAttribute="topMargin" constant="3" id="i4x-Bj-7o8"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="D8a-2R-ird"/>
+                                                    <exclude reference="3fA-Ip-XRn"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oRE-ef-win">
+                                        <rect key="frame" x="0.0" y="339.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oRE-ef-win" id="84C-uu-auO">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="OAuth Application Secret" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pk3-uJ-vPd">
+                                                    <rect key="frame" x="113" y="8" width="479" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secret" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1i-P0-rDd">
+                                                    <rect key="frame" x="46" y="11" width="50" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pk3-uJ-vPd" firstAttribute="leading" secondItem="k1i-P0-rDd" secondAttribute="trailing" constant="17" id="6hJ-fi-Sec"/>
+                                                <constraint firstItem="pk3-uJ-vPd" firstAttribute="leading" secondItem="84C-uu-auO" secondAttribute="leadingMargin" constant="105" id="c6g-Jl-jgf"/>
+                                                <constraint firstItem="k1i-P0-rDd" firstAttribute="top" secondItem="84C-uu-auO" secondAttribute="topMargin" constant="3" id="kHG-JN-5YN"/>
+                                                <constraint firstItem="pk3-uJ-vPd" firstAttribute="top" secondItem="84C-uu-auO" secondAttribute="topMargin" id="r81-hh-xcm"/>
+                                                <constraint firstItem="pk3-uJ-vPd" firstAttribute="trailing" secondItem="84C-uu-auO" secondAttribute="trailingMargin" id="u3m-JW-VAa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="hvy-f1-ecP" id="kIE-Y3-pEd"/>
@@ -283,6 +352,8 @@
                     <connections>
                         <outlet property="_addressTextField" destination="Amr-d4-LnI" id="esY-26-pfb"/>
                         <outlet property="_apiPrefixTextField" destination="isD-wA-2P6" id="JsF-uu-RPA"/>
+                        <outlet property="_oauthAppIdTextField" destination="ArB-9T-lIb" id="fgo-qG-kSy"/>
+                        <outlet property="_oauthAppKeyTextField" destination="pk3-uJ-vPd" id="YNg-dG-60r"/>
                         <outlet property="_portTextField" destination="x6a-Km-RfF" id="A7q-Rp-6rh"/>
                     </connections>
                 </tableViewController>

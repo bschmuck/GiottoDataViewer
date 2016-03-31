@@ -63,6 +63,11 @@ NSString * const kCRAreaGraphViewControllerNavButtonViewKey = @"view";
 {
     _chartData = [self fetchDataFor:_device.uuid];
     
+    if(!_chartData){
+        NSLog(@"NULL!!!!!");
+        return;
+    }
+    
     [self initXLabels:_chartData];
     [self.chartView reloadData];
 }

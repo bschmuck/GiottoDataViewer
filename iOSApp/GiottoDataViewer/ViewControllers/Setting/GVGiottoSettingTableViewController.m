@@ -8,6 +8,7 @@
 
 #import "GVGiottoSettingTableViewController.h"
 #import "GVUserPreferences.h"
+#import "GVBuildingDepotManager.h"
 
 @interface GVGiottoSettingTableViewController ()
 
@@ -23,6 +24,8 @@
     [_addressTextField setText:pref.giottoServer];
     [_portTextField setText:pref.giottoPort];
     [_apiPrefixTextField setText:pref.apiPrefix];
+    [_oauthAppIdTextField setText:pref.oauthAppId];
+    [_oauthAppKeyTextField setText:pref.oauthAppKey];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -32,7 +35,23 @@
     [pref setGiottoServer:_addressTextField.text];
     [pref setGiottoPort:_portTextField.text];
     [pref setApiPrefix:_apiPrefixTextField.text];
+    
+    BOOL isOAuthInfoChanged = NO;
+    if( [pref.oauthAppKey isEqualToString:_oauthAppKeyTextField.text]){
+        isOAuthInfoChanged = YES;
+    }
+    if( [pref.oauthAppId isEqualToString:_oauthAppIdTextField.text]){
+        isOAuthInfoChanged = YES;
+    }
+    [pref setOauthAppKey:_oauthAppKeyTextField.text];
+    [pref setOauthAppId:_oauthAppIdTextField.text];
+    
     [pref save];
+
+    if(isOAuthInfoChanged){
+        [[GVBuildingDepotManager sharedInstance]fetchOAuthToken:pref.oauthAppId forKey:pref.oauthAppKey];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

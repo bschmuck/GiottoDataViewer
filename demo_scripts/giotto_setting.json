@@ -1,9 +1,20 @@
 {
 	"giotto_rest_api":{
+		"server":"bd-test.andrew.cmu.edu",
+		"port":"82",
+		"api_prefix":"/api"
+	},
+
+	"ml_rest_api":{
 		"server":"buildingdepot.andrew.cmu.edu",
-		"port":"5001",
+		"port":"5000",
 		"api_prefix":""
 	},
 
-	"gateway":"Machine Learning"
+	"gateway":"Machine Learning",
+
+	"oauth":{
+		"id":"oMRTpUoO6kF8Du5eFhmaTNJZ4I6ykLjxqrArTrxv",
+		"key":"DSUquWT6ZJqq0ZMABELrnuORsUDJ0aPLyu9qsitGPhPJQdeczc"
+	}
 }

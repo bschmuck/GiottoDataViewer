@@ -19,8 +19,9 @@ if __name__ == "__main__":
 		
 		for uuid in uuids:
 			dic = {}
-			dic['sensor_uuid'] = uuid
+			dic['sensor_id'] = uuid
 			dic['samples'] = [{"time":timestamp,"value":value}]
+			dic['value_type']=''
 			data_array.append(dic)
 
 

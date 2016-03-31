@@ -51,36 +51,73 @@ static GVBuildingDepotManager *sharedInstance = nil;
     return self;
 }
 
+- (id) init
+{
+    self = [super init];
+    if(self){
+        GVUserPreferences * pref = [GVUserPreferences sharedInstance];
+        [self fetchOAuthToken:pref.oauthAppId forKey:pref.oauthAppKey];
+    }
+    
+    return self;
+}
 
 #pragma mark -
 #pragma mark Methods
+
+- (void) fetchOAuthToken:(NSString*)appId forKey:(NSString*)appKey
+{
+    NSString * message = [NSString stringWithFormat:@"AppID: %@\nAppKey:%@", appId, appKey];
+    GV_LOG_VERBOSE(@"Fetch OAuth token", message);
+    
+    NSString* server = [[GVUserPreferences sharedInstance] giottoServer];
+    NSString* port = [[GVUserPreferences sharedInstance]giottoPort];
+    //NSString* apiPrefix = [[GVUserPreferences sharedInstance]apiPrefix];
+    
+    NSString* url = [NSString stringWithFormat:@"%@:%@/oauth/access_token/client_id=%@/client_secret=%@",
+                     server,
+                     port,
+                     appId,
+                     appKey
+                     ];
+    NSLog(@"%@",url);
+    
+    NSString* json = [self fetchDataFrom:url withOAuthToken:nil];
+    if(!json){
+        GV_LOG_ERROR(@"Could not fetch OAuth token", message);
+        return;
+    }
+    
+    NSDictionary* dic = [NSDictionary dictionaryWithJson:json];
+    
+    _accessToken = [dic objectForKey:@"access_token"];
+}
 
 - (NSArray*) fetchSensorsAt:(NSString*)location
 {
     NSString * message = [NSString stringWithFormat:@"location=%@",location];
     GV_LOG_VERBOSE(@"Fetch Sesnor List", message);
 
-    //http://buildingdepot.andrew.cmu.edu:82/service/api/v1/Location=Google/metadata
     NSString* server = [[GVUserPreferences sharedInstance] giottoServer];
     NSString* port = [[GVUserPreferences sharedInstance]giottoPort];
     NSString* apiPrefix = [[GVUserPreferences sharedInstance]apiPrefix];
 
-    NSString* url = [NSString stringWithFormat:@"http://%@:%@%@location=%@/metadata",
+    NSString* url = [NSString stringWithFormat:@"%@:%@%@/sensor/list?filter=metadata&location=%@",
                      server,
                      port,
                      apiPrefix,
                      location];
     
-    NSString* json = [self fetchDataFrom:url];
+    NSString* json = [self fetchDataFrom:url withOAuthToken:_accessToken];
     if(!json){
         return [[NSArray alloc]init];
     }
+    
     NSDictionary* dic = [NSDictionary dictionaryWithJson:json];
-    NSDictionary* sensors = [dic objectForKey:@"data"];
+    NSArray* sensors = [dic objectForKey:@"data"];
     NSMutableArray* devices = [[NSMutableArray alloc] init];
 
-    for(NSString* key in [sensors allKeys]){
-        NSDictionary* sensor = [sensors objectForKey:key];
+    for(NSDictionary* sensor in sensors){
         NSDictionary* metadata = [sensor objectForKey:@"metadata"];
         if([sensor objectForKey:@"name"] != nil &&
            [metadata objectForKey:@"location"] != nil &&
@@ -122,24 +159,35 @@ static GVBuildingDepotManager *sharedInstance = nil;
     //http://buildingdepot.andrew.cmu.edu:82/service/api/v1/data/id=09896f73-2905-45a7-86b8-958a0cbedb00/interval=86400s/resolution=3600s
     //http://buildingdepot.andrew.cmu.edu:82/service/api/v1/data/id=c82e86ae-fb89-40c8-879f-d8bad3a7ef8b/interval=43264.000000s/resolution=60s
     
-    NSString* url = [NSString stringWithFormat:@"http://%@:%@%@data/id=%@/interval=%ds/resolution=%ds",
+    NSString* url = [NSString stringWithFormat:@"%@:%@%@/sensor/%@/timeseries?start_time=%d&end_time=%d&resolusion=%ds",
                       server,
                       port,
                       apiPrefix,
                       sensorUuid,
-                      (int)(endTime - startTime),
+                      (int)startTime,
+                      (int)endTime,
                       resolution];
 
     NSLog(@"%@",url);
-    NSString* json = [self fetchDataFrom:url];
+    NSString* json = [self fetchDataFrom:url withOAuthToken:_accessToken];
+    if(!json){
+        return nil;
+    }
 
     NSDictionary * dic = [NSDictionary dictionaryWithJson:json];
-    NSArray * values = [[[[dic objectForKey:@"data"] objectForKey:@"series"]objectAtIndex:0]objectForKey:@"values"];
+    NSDictionary * data = [dic objectForKey:@"data"];
+    if(data==nil){
+        return nil;
+    }
+    NSDictionary * readings = [[[dic objectForKey:@"data"] objectForKey:@"series"]objectAtIndex:0];
+    NSArray * columns = [readings objectForKey:@"columns"];
+    NSUInteger index = [columns indexOfObject:@"value"];
+    NSArray * values = [readings objectForKey:@"values"];
     
     NSMutableArray* sensorReadings =[[NSMutableArray alloc]init];
     
     for(NSArray* sample in values){
-        NSNumber* reading = [sample objectAtIndex:1];
+        NSNumber* reading = [sample objectAtIndex:index];
         if(reading != (id)[NSNull null])
             [sensorReadings addObject:reading];
     }
@@ -151,7 +199,7 @@ static GVBuildingDepotManager *sharedInstance = nil;
 
 #pragma mark -
 
-- (NSString*) fetchDataFrom:(NSString*)url
+- (NSString*) fetchDataFrom:(NSString*)url withOAuthToken:(NSString*)token
 {
     GV_LOG_VERBOSE(@"HTTP GET", url);
     
@@ -159,10 +207,21 @@ static GVBuildingDepotManager *sharedInstance = nil;
     [request setHTTPMethod:@"GET"];
     [request setURL:[NSURL URLWithString:url]];
     
+    NSString * tokenHeader = [NSString stringWithFormat:@"Bearer %@", token];
+    NSLog(@"%@", tokenHeader);
+    if(token != nil){
+        [request addValue:tokenHeader forHTTPHeaderField:@"Authorization"];
+    }
+
+    
     NSError *error = [[NSError alloc] init];
     NSHTTPURLResponse *responseCode = nil;
     
     NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
+    
+    NSString * response = [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
+
+    NSLog(@"%ld", (long)[responseCode statusCode]);
     
     if([responseCode statusCode] != 200){
         NSString * errorMessage = [NSString stringWithFormat:@"Error getting %@, HTTP status code %li",
@@ -174,7 +233,7 @@ static GVBuildingDepotManager *sharedInstance = nil;
         return nil;
     }
 
-    NSString * response = [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
+    //NSString * response = [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
     GV_LOG_VERBOSE(@"HTTP Respose", response);
 
     return response;

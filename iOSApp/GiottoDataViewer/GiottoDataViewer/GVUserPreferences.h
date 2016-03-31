@@ -16,5 +16,7 @@
 @property (readwrite) NSString* giottoServer;
 @property (readwrite) NSString* locationEmulation;
 @property (readwrite) NSString* apiPrefix;
+@property (readwrite) NSString* oauthAppId;
+@property (readwrite) NSString* oauthAppKey;
 
 @end

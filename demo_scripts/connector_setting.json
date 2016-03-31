@@ -1,9 +1,9 @@
 {
 	"sensor_uuids":[
-		"c82e86ae-fb89-40c8-879f-d8bad3a7ef8b",
-		"85105ac7-bfdf-40d4-91c0-df2e91f58e55",
-		"0152e43a-901e-42ae-ad2f-460e3165d58b",
-		"baa054de-85b6-4ef4-abc4-dd210d76c2fc"
+		"99eb577c-1b2c-449b-b14b-05fd780b3154",
+		"adf6be3c-0371-4c41-bd83-4b84f051750b",
+		"ca7a021a-b3f0-4f79-8673-fb9bd105d77b",
+		"840c9763-3110-483c-a29a-3f8bf068dd98"
 	],
 	"sampling_rate":1
 }

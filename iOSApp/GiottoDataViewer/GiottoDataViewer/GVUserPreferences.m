@@ -63,6 +63,25 @@ static GVUserPreferences *sharedInstance = nil;
 }
 
 #pragma mark - accessors
+- (NSString*)oauthAppId
+{
+    return [self loadPreference:@"oauthAppId" default:@"hB1tODMDjYIYlKxC80G4RXUwiVIGWRjzdidmOVj2"];
+}
+
+- (void) setOauthAppId:(NSString *)oauthAppId
+{
+    [self savePreference:oauthAppId forKey:@"oauthAppId"];
+}
+
+- (NSString*)oauthAppKey
+{
+    return [self loadPreference:@"oauthAppKey" default:@"AAqUgY91IMUOYMM3MhE376aoubKCp78XmHZAGrKvqUx1QWXtR5"];
+}
+
+- (void) setOauthAppKey:(NSString *)oauthAppKey
+{
+    [self savePreference:oauthAppKey forKey:@"oauthAppKey"];
+}
 
 - (NSString*)giottoServer
 {
@@ -96,7 +115,7 @@ static GVUserPreferences *sharedInstance = nil;
 
 - (NSString*) apiPrefix
 {
-    return [self loadPreference:@"apiPrefix" default:@"/service/api/v1/"];
+    return [self loadPreference:@"apiPrefix" default:@"/api"];
 }
 
 - (void) setApiPrefix:(NSString *)apiPrefix

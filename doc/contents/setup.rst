@@ -15,11 +15,8 @@ Building Depot Server
 This category contains parameters used to communicate
 with a Building Depot server to find sensors and to fetch sensor readings.
 
-GiottoDataViewer uses these parameters in the format
-**http://<address>:<port>/path/to/api**
-
 ========= ========================================================================
-Address   Building Depots' address (e.g., buildingdepot.cmu.edu or 128.2.113.118)
+Address   Building Depots' address (e.g., ``https//buildingdepot.cmu.edu`` or ``https://128.2.113.118``)
 --------- ------------------------------------------------------------------------
 Port      82 (with default Building Depot's settings)
 ========= ========================================================================

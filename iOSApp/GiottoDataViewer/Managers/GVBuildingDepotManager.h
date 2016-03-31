@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface GVBuildingDepotManager : NSObject
+{
+    __strong NSString * _accessToken;
+}
 
 + (GVBuildingDepotManager *)sharedInstance;
 
 - (NSArray*) fetchSensorsAt:(NSString*)location;
 - (NSArray*) fetchSensorReading:(NSString*)sensorUuid :(float)startTime :(float)endTime :(int)resolution;
+- (void) fetchOAuthToken:(NSString*)appId forKey:(NSString*)appKey;
 
 @end

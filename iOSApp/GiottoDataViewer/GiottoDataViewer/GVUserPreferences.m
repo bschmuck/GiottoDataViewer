@@ -65,7 +65,7 @@ static GVUserPreferences *sharedInstance = nil;
 #pragma mark - accessors
 - (NSString*)oauthAppId
 {
-    return [self loadPreference:@"oauthAppId" default:@"hB1tODMDjYIYlKxC80G4RXUwiVIGWRjzdidmOVj2"];
+    return [self loadPreference:@"oauthAppId" default:@"4G3ot83dNbu1r1Y5KW6qeSwSyDyXaRLTMw9XEpiZ"];
 }
 
 - (void) setOauthAppId:(NSString *)oauthAppId
@@ -75,7 +75,7 @@ static GVUserPreferences *sharedInstance = nil;
 
 - (NSString*)oauthAppKey
 {
-    return [self loadPreference:@"oauthAppKey" default:@"AAqUgY91IMUOYMM3MhE376aoubKCp78XmHZAGrKvqUx1QWXtR5"];
+    return [self loadPreference:@"oauthAppKey" default:@"t9U3ME5HfAcZRX8IrO3XoNTwqWkLQN8fLmGFAQT86vSx5dJBDT"];
 }
 
 - (void) setOauthAppKey:(NSString *)oauthAppKey

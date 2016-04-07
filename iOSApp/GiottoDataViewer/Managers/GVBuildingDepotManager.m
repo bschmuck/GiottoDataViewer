@@ -119,29 +119,38 @@ static GVBuildingDepotManager *sharedInstance = nil;
 
     for(NSDictionary* sensor in sensors){
         NSDictionary* metadata = [sensor objectForKey:@"metadata"];
-        if([sensor objectForKey:@"name"] != nil &&
-           [metadata objectForKey:@"location"] != nil &&
-           [sensor objectForKey:@"source_name"] != nil &&
-           [metadata objectForKey:@"type"] != nil ){
-            NSDictionary* deviceDic = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                       [sensor objectForKey:@"name"], @"uuid",
-                                       [metadata objectForKey:@"location"], @"location",
-                                       [sensor objectForKey:@"source_name"], @"name",
-                                       [metadata objectForKey:@"type"], @"type",
-                                       nil
-                                       ];
-            GVDevice* device = [[GVDevice alloc]initWithDictionary:deviceDic];
-            [devices addObject:device];
-        } else {
-            NSString * message = [NSString stringWithFormat:@"name: %@\nlocation: %@\nsource_name: %@\ntype: %@",
-                                  [sensor objectForKey:@"name"],
-                                  [metadata objectForKey:@"location"],
-                                  [sensor objectForKey:@"source_name"],
-                                  [metadata objectForKey:@"type"]
-                                  ];
-            
-            GV_LOG_WARNING(@"Incomplete Sensor Found", message);
+        NSString * name = [sensor objectForKey:@"name"];
+        NSString * location = [metadata objectForKey:@"location"];
+        NSString * sourceName = [sensor objectForKey:@"source_name"];
+        NSString * type = [metadata objectForKey:@"type"];
+        
+        if(!name){
+            name = @"No Name";
         }
+        
+        if(!location){
+            location = @"No Location Info";
+        }
+        
+        if(!sourceName){
+            sourceName = @"No Source Name";
+        }
+        
+        if(!type){
+            type = @"No Type Info";
+        }
+        
+        
+        NSDictionary* deviceDic = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                   [sensor objectForKey:@"name"], @"uuid",
+                                   [metadata objectForKey:@"location"], @"location",
+                                   [sensor objectForKey:@"source_name"], @"name",
+                                   [metadata objectForKey:@"type"], @"type",
+                                   nil
+                                   ];
+        GVDevice* device = [[GVDevice alloc]initWithDictionary:deviceDic];
+        [devices addObject:device];
+        
     }
     
     return devices;
@@ -149,25 +158,24 @@ static GVBuildingDepotManager *sharedInstance = nil;
 
 
 
-- (NSArray*) fetchSensorReading:(NSString*)sensorUuid :(float)startTime :(float)endTime :(int)resolution
+- (NSArray*) fetchSensorReading:(NSString*)sensorUuid :(NSTimeInterval)startTime :(NSTimeInterval)endTime :(NSString*)resolution
 {
     NSString* server = [[GVUserPreferences sharedInstance] giottoServer];
     NSString* port = [[GVUserPreferences sharedInstance]giottoPort];
     NSString* apiPrefix = [[GVUserPreferences sharedInstance]apiPrefix];
     
-    //Here is an example of a API call
-    //http://buildingdepot.andrew.cmu.edu:82/service/api/v1/data/id=09896f73-2905-45a7-86b8-958a0cbedb00/interval=86400s/resolution=3600s
-    //http://buildingdepot.andrew.cmu.edu:82/service/api/v1/data/id=c82e86ae-fb89-40c8-879f-d8bad3a7ef8b/interval=43264.000000s/resolution=60s
-    
-    NSString* url = [NSString stringWithFormat:@"%@:%@%@/sensor/%@/timeseries?start_time=%d&end_time=%d&resolusion=%ds",
+    NSString* url = [NSString stringWithFormat:@"%@:%@%@/sensor/%@/timeseries?start_time=%f&end_time=%f",
                       server,
                       port,
                       apiPrefix,
                       sensorUuid,
-                      (int)startTime,
-                      (int)endTime,
-                      resolution];
-
+                      startTime,
+                     endTime
+                     ];
+    if(resolution != nil && ![resolution isEqualToString:@""]){
+        url = [url stringByAppendingString:[NSString stringWithFormat:@"&resolusion=%@",resolution]];
+    }
+               
     NSLog(@"%@",url);
     NSString* json = [self fetchDataFrom:url withOAuthToken:_accessToken];
     if(!json){

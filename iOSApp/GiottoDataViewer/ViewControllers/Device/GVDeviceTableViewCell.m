@@ -114,7 +114,7 @@
         _iconImageView.image = [UIImage imageNamed:@"AccelerometerIcon"];
     }
     else{
-        
+        _iconImageView.image = [UIImage imageNamed:@"UnknownIcon"];
     }
 }
 

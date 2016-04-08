@@ -388,6 +388,7 @@
 				TargetAttributes = {
 					4D156EA21C9EB643004FC000 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 836Y8J5TFE;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -604,10 +605,14 @@
 			baseConfigurationReference = 5FAFED4FF1402B91CD95508D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GiottoDataViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.iotexpedition.ios.giottodataviewer;
 				PRODUCT_NAME = GIoTTO;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -616,10 +621,14 @@
 			baseConfigurationReference = 43BD94DDAC7C927440660113 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GiottoDataViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.iotexpedition.ios.giottodataviewer;
 				PRODUCT_NAME = GIoTTO;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

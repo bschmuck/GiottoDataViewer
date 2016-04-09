@@ -123,7 +123,12 @@ static GVLocationManager *sharedInstance = nil;
         beaconRegion.notifyOnEntry = YES;
         beaconRegion.notifyOnExit = YES;
         
-        [_regions addObject:beaconRegion];
+        if(beaconRegion){
+            [_regions addObject:beaconRegion];
+        }
+        else{
+            GV_LOG_ERROR(@"Invalid UUID", beacon.uuid);
+        }
     }
     
     NSLog(@"Regions: %@",_regions);

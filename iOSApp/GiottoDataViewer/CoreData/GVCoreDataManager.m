@@ -269,7 +269,7 @@ static GVCoreDataManager *sharedInstance = nil;
 // obtain all excluded site entities
 - (NSArray*)applicationLogEntities
 {
-    return [self getManagedObjectsForEntity:@"ApplicationLogEntity" sortBy:@"timestamp" ascending:YES];
+    return [self getManagedObjectsForEntity:@"ApplicationLogEntity" sortBy:@"timestamp" ascending:NO];
 }
 
 - (void) addApplicationLogMessage:(NSString *)message detail:(NSString *)detail level:(int)level

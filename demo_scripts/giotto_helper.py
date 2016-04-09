@@ -23,27 +23,9 @@ class GiottoHelper:
         url = 'http://' + self.giotto_rest_api['server']
         url += ':' + self.giotto_rest_api['port'] 
         url += self.giotto_rest_api['api_prefix'] + '/sensor/timeseries'
-        print url
-        print headers
-        print data_array
 
         result = requests.post(url, data=json.dumps(data_array), headers=headers)
         print result
-
-    def post_log(self, level, event, detail):
-        headers = {'content-type': 'application/json'}
-        url = 'http://' + self.ml_rest_api['server'] + ':' + self.ml_rest_api['port']
-        url += '/log'
-
-        log = {
-            "time":time.time(),
-            "event":event,
-            "detail":detail,
-            "gateway_name":self.gateway['name'],
-            "level":level
-        }
-
-        result = requests.post(url, data=json.dumps(log), headers=headers)
 
     def get_oauth_token(self):
         headers = {'content-type': 'application/json'}

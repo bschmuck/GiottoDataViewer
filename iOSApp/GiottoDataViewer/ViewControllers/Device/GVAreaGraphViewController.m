@@ -74,12 +74,14 @@ NSString * const kCRAreaGraphViewControllerNavButtonViewKey = @"view";
 
 - (NSArray*) fetchDataFor:(NSString*)uuid
 {
-    NSDate* now = [NSDate dateWithTimeIntervalSinceNow:0];
-    NSTimeInterval interval = [now timeIntervalSince1970];
+    NSNumber * range = [_graphSettings objectForKey:@"x_range"];
+    
+    NSDate* start = [NSDate dateWithTimeIntervalSinceNow:-[range longLongValue]];
+    NSDate* end = [NSDate dateWithTimeIntervalSinceNow:0];
 
-    float startTime = (float)(interval - [[_graphSettings objectForKey:@"x_range"]integerValue]);
-    float endTime = (float)interval;
-    int resolution = [[_graphSettings objectForKey:@"resolution"]intValue];
+    NSTimeInterval startTime = [start timeIntervalSince1970];
+    NSTimeInterval endTime = [end timeIntervalSince1970];
+    NSString * resolution = [_graphSettings objectForKey:@"resolution"];
     
     
     NSArray* data = [[GVBuildingDepotManager sharedInstance] fetchSensorReading:uuid :startTime :endTime :resolution ];
@@ -214,7 +216,7 @@ NSString * const kCRAreaGraphViewControllerNavButtonViewKey = @"view";
 
 - (CGFloat)lineChartView:(JBLineChartView *)lineChartView verticalValueForHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex
 {
-    return [[self.chartData objectAtIndex:horizontalIndex] floatValue];
+    return fabs([[self.chartData objectAtIndex:horizontalIndex] floatValue]);   // JB Library only takes positive values
 }
 
 - (void)lineChartView:(JBLineChartView *)lineChartView didSelectLineAtIndex:(NSUInteger)lineIndex horizontalIndex:(NSUInteger)horizontalIndex touchPoint:(CGPoint)touchPoint
@@ -341,7 +343,7 @@ NSString * const kCRAreaGraphViewControllerNavButtonViewKey = @"view";
     } else if ([self.device.type isEqualToString:@"Lux"]){
         config = @{
                    @"unit":@"lx",
-                   @"x_range":@(60*5),
+                   @"x_range":@(60*5.),
                    @"y_range":@[@0, @1000],
                    @"resolution":@"1s",
                    @"refresh_wait":@1
@@ -349,7 +351,7 @@ NSString * const kCRAreaGraphViewControllerNavButtonViewKey = @"view";
     } else if ([self.device.type isEqualToString:@"Pressure"]){
         config = @{
                    @"unit":@"hPA",
-                   @"x_range":@(60*60*12),
+                   @"x_range":@(60*60*12.),
                    @"y_range":@[@800, @1600],
                    @"resolution":@"60s",
                    @"refresh_wait":@60
@@ -357,10 +359,10 @@ NSString * const kCRAreaGraphViewControllerNavButtonViewKey = @"view";
     }
     else{
         config = @{
-                   @"unit":@"",
-                   @"x_range":@(60*5),
+                   @"unit":@"unit",
+                   @"x_range":@60.0,
                    @"y_range":@[@0, @1000],
-                   @"resolution":@"1s",
+                   @"resolution":@"",
                    @"refresh_wait":@1
                    };
     }

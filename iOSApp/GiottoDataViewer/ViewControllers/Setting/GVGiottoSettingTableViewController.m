@@ -23,6 +23,7 @@
     
     [_addressTextField setText:pref.giottoServer];
     [_portTextField setText:pref.giottoPort];
+    [_oauthPortTextField setText:pref.oauthPort];
     [_apiPrefixTextField setText:pref.apiPrefix];
     [_oauthAppIdTextField setText:pref.oauthAppId];
     [_oauthAppKeyTextField setText:pref.oauthAppKey];
@@ -35,6 +36,7 @@
     [pref setGiottoServer:_addressTextField.text];
     [pref setGiottoPort:_portTextField.text];
     [pref setApiPrefix:_apiPrefixTextField.text];
+    [pref setOauthPort:_oauthPortTextField.text];
     
     BOOL isOAuthInfoChanged = NO;
     if( [pref.oauthAppKey isEqualToString:_oauthAppKeyTextField.text]){
@@ -43,6 +45,10 @@
     if( [pref.oauthAppId isEqualToString:_oauthAppIdTextField.text]){
         isOAuthInfoChanged = YES;
     }
+    if( [pref.oauthPort isEqualToString:_oauthPortTextField.text]) {
+        isOAuthInfoChanged = YES;
+    }
+    
     [pref setOauthAppKey:_oauthAppKeyTextField.text];
     [pref setOauthAppId:_oauthAppIdTextField.text];
     

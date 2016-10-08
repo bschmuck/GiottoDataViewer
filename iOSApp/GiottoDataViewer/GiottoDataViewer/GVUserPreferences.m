@@ -108,6 +108,16 @@ static GVUserPreferences *sharedInstance = nil;
     return [self loadPreference:@"locationEmulation" default:@""];
 }
 
+- (void) setOauthPort: (NSString *)oauthPort
+{
+    [self savePreference:oauthPort forKey:@"oauthPort"];
+}
+
+- (NSString *) oauthPort
+{
+    return [self loadPreference:@"oauthPort" default:@"81"];
+}
+
 - (void) setLocationEmulation:(NSString *)locationEmulation
 {
     [self savePreference:locationEmulation forKey:@"locationEmulation"];

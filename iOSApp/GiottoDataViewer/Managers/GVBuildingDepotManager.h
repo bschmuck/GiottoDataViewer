@@ -16,6 +16,7 @@
 + (GVBuildingDepotManager *)sharedInstance;
 
 - (NSArray*) fetchSensorsAt:(NSString*)location;
+- (NSArray *) fetchSensorsWithLocationTag:(NSString *)location;
 - (NSArray*) fetchSensorReading:(NSString*)sensorUuid :(NSTimeInterval)startTime :(NSTimeInterval)endTime :(NSString*)resolution;
 - (void) fetchOAuthToken:(NSString*)appId forKey:(NSString*)appKey;
 

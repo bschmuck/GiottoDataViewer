@@ -18,5 +18,6 @@
 @property (readwrite) NSString* apiPrefix;
 @property (readwrite) NSString* oauthAppId;
 @property (readwrite) NSString* oauthAppKey;
+@property (readwrite) NSString* oauthPort;
 
 @end

@@ -123,7 +123,8 @@
     
     NSMutableArray* devices = [[NSMutableArray alloc]init];
     for( NSString* loc in locations){
-        NSArray* d = [bdManager fetchSensorsAt:loc];
+//        NSArray* d = [bdManager fetchSensorsAt:loc];
+        NSArray *d = [bdManager fetchSensorsWithLocationTag:loc];
         [devices addObjectsFromArray:d];
     }
     

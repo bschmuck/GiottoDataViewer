@@ -71,18 +71,19 @@ static GVBuildingDepotManager *sharedInstance = nil;
     GV_LOG_VERBOSE(@"Fetch OAuth token", message);
     
     NSString* server = [[GVUserPreferences sharedInstance] giottoServer];
-    NSString* port = [[GVUserPreferences sharedInstance]giottoPort];
+    NSString* oauthPort = [[GVUserPreferences sharedInstance] oauthPort];
+
     //NSString* apiPrefix = [[GVUserPreferences sharedInstance]apiPrefix];
     
     NSString* url = [NSString stringWithFormat:@"%@:%@/oauth/access_token/client_id=%@/client_secret=%@",
                      server,
-                     port,
+                     oauthPort,
                      appId,
                      appKey
                      ];
     NSLog(@"%@",url);
     
-    NSString* json = [self fetchDataFrom:url withOAuthToken:nil];
+    NSString* json = [self fetchDataFrom:url withOAuthToken:nil method:@"GET" payload:nil];
     if(!json){
         GV_LOG_ERROR(@"Could not fetch OAuth token", message);
         return;
@@ -93,30 +94,88 @@ static GVBuildingDepotManager *sharedInstance = nil;
     _accessToken = [dic objectForKey:@"access_token"];
 }
 
-- (NSArray*) fetchSensorsAt:(NSString*)location
-{
-    NSString * message = [NSString stringWithFormat:@"location=%@",location];
-    GV_LOG_VERBOSE(@"Fetch Sesnor List", message);
-
-    NSString* server = [[GVUserPreferences sharedInstance] giottoServer];
-    NSString* port = [[GVUserPreferences sharedInstance]giottoPort];
-    NSString* apiPrefix = [[GVUserPreferences sharedInstance]apiPrefix];
-
-    NSString* url = [NSString stringWithFormat:@"%@:%@%@/sensor/list?filter=metadata&location=%@",
-                     server,
-                     port,
-                     apiPrefix,
-                     location];
+- (NSArray *) fetchSensorsWithLocationTag:(NSString *)location {
+    GVUserPreferences *preferences = GVUserPreferences.sharedInstance;
     
-    NSString* json = [self fetchDataFrom:url withOAuthToken:_accessToken];
+    NSDictionary *dict = @{
+       @"data" : @{
+               @"Tags" : @[[NSString stringWithFormat:@"location:%@", location]]
+       }
+    };
+    
+    NSString *url = [NSString stringWithFormat:@"%@:%@%@/search", preferences.giottoServer, preferences.oauthPort, preferences.apiPrefix];
+    NSString *json = [self fetchDataFrom:url withOAuthToken:_accessToken method:@"POST" payload:dict];
+    
     if(!json){
         return [[NSArray alloc]init];
     }
     
+    return [self parseSensorResponseSearch:json];
+}
+
+
+//Parses the json response for fetch sensors
+- (NSArray *) parseSensorResponseSearch:(NSString *)json {
+    NSDictionary* dic = [NSDictionary dictionaryWithJson:json];
+    NSArray* sensors = [dic objectForKey:@"result"];
+    NSMutableArray* devices = [[NSMutableArray alloc] init];
+    
+    for(NSDictionary* sensor in sensors){
+        NSDictionary* metadata = [sensor objectForKey:@"metadata"];
+        NSString * name = [sensor objectForKey:@"name"];
+        NSString * location;
+        NSArray *tags = [sensor objectForKey:@"tags"];
+        NSString * type;
+        for(NSDictionary *tag in tags){
+            NSString *key = tag[@"name"];
+            if([key isEqualToString:@"location"]) {
+                location = tag[@"value"];
+            } else if([key isEqualToString:@"type"]) {
+                type = tag[@"value"];
+            }
+        }
+        
+        NSString * sourceName = [sensor objectForKey:@"source_name"];
+
+        
+        if(!name){
+            name = @"No Name";
+        }
+        
+        if(!location){
+            location = @"No Location Info";
+        }
+        
+        if(!sourceName){
+            sourceName = @"No Source Name";
+        }
+        
+        if(!type){
+            type = @"No Type Info";
+        }
+        
+        
+        NSDictionary* deviceDic = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                   name, @"uuid",
+                                   location, @"location",
+                                   sourceName, @"name",
+                                   type, @"type",
+                                   nil
+                                   ];
+        GVDevice* device = [[GVDevice alloc]initWithDictionary:deviceDic];
+        [devices addObject:device];
+        
+    }
+    return devices;
+}
+
+
+//Parses the json response for fetch sensors
+- (NSArray *) parseSensorResponse:(NSString *)json {
     NSDictionary* dic = [NSDictionary dictionaryWithJson:json];
     NSArray* sensors = [dic objectForKey:@"data"];
     NSMutableArray* devices = [[NSMutableArray alloc] init];
-
+    
     for(NSDictionary* sensor in sensors){
         NSDictionary* metadata = [sensor objectForKey:@"metadata"];
         NSString * name = [sensor objectForKey:@"name"];
@@ -152,8 +211,32 @@ static GVBuildingDepotManager *sharedInstance = nil;
         [devices addObject:device];
         
     }
-    
     return devices;
+}
+
+
+//Deprecated
+- (NSArray*) fetchSensorsAt:(NSString*)location
+{
+    NSString * message = [NSString stringWithFormat:@"location=%@",location];
+    GV_LOG_VERBOSE(@"Fetch Sesnor List", message);
+
+    NSString* server = [[GVUserPreferences sharedInstance] giottoServer];
+    NSString* port = [[GVUserPreferences sharedInstance]giottoPort];
+    NSString* apiPrefix = [[GVUserPreferences sharedInstance]apiPrefix];
+
+    NSString* url = [NSString stringWithFormat:@"%@:%@%@/sensor/list?filter=metadata&location=%@",
+                     server,
+                     port,
+                     apiPrefix,
+                     location];
+    
+    NSString* json = [self fetchDataFrom:url withOAuthToken:_accessToken method:@"GET" payload:nil];
+    if(!json){
+        return [[NSArray alloc]init];
+    }
+
+    return [self parseSensorResponse:json];
 }
 
 
@@ -177,7 +260,7 @@ static GVBuildingDepotManager *sharedInstance = nil;
     }
                
     NSLog(@"%@",url);
-    NSString* json = [self fetchDataFrom:url withOAuthToken:_accessToken];
+    NSString* json = [self fetchDataFrom:url withOAuthToken:_accessToken method:@"GET" payload:nil];
     if(!json){
         return nil;
     }
@@ -207,18 +290,30 @@ static GVBuildingDepotManager *sharedInstance = nil;
 
 #pragma mark -
 
-- (NSString*) fetchDataFrom:(NSString*)url withOAuthToken:(NSString*)token
+
+- (NSString*) fetchDataFrom:(NSString*)url withOAuthToken:(NSString*)token method:(NSString *)httpMethod payload:(NSDictionary *)dict
 {
+    //TODO: Change this to log what type of http method is being used.
     GV_LOG_VERBOSE(@"HTTP GET", url);
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setHTTPMethod:@"GET"];
+    [request setHTTPMethod:httpMethod];
     [request setURL:[NSURL URLWithString:url]];
     
     NSString * tokenHeader = [NSString stringWithFormat:@"Bearer %@", token];
     NSLog(@"%@", tokenHeader);
     if(token != nil){
         [request addValue:tokenHeader forHTTPHeaderField:@"Authorization"];
+    }
+    
+    
+    
+    if(dict != nil) {
+        NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:0 error:nil];
+        request.HTTPBody = data;
+        NSString *postLength = [NSString stringWithFormat:@"%ld", data.length];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     }
 
     

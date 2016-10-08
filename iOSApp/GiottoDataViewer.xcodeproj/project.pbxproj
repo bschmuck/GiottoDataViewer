@@ -1,673 +1,2107 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		3A2E5A1F4B85BC897AE2C563 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5402B54163D6611A6FD471C /* libPods.a */; };
-		4D156EA81C9EB643004FC000 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156EA71C9EB643004FC000 /* main.m */; };
-		4D156EB41C9EB643004FC000 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D156EB21C9EB643004FC000 /* Main.storyboard */; };
-		4D156EB61C9EB643004FC000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D156EB51C9EB643004FC000 /* Assets.xcassets */; };
-		4D156EB91C9EB643004FC000 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D156EB71C9EB643004FC000 /* LaunchScreen.storyboard */; };
-		4D156ED31C9EEA1B004FC000 /* GVBuildingDepotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156ED01C9EEA1B004FC000 /* GVBuildingDepotManager.m */; };
-		4D156ED41C9EEA1B004FC000 /* GVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156ED21C9EEA1B004FC000 /* GVLocationManager.m */; };
-		4D156ED91C9EEA32004FC000 /* GVDeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156ED61C9EEA32004FC000 /* GVDeviceTableViewController.m */; };
-		4D156EE01C9EFA47004FC000 /* GVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156EDF1C9EFA47004FC000 /* GVDevice.m */; };
-		4D156EED1C9F1A2F004FC000 /* GVDeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156EEC1C9F1A2F004FC000 /* GVDeviceTableViewCell.m */; };
-		4D156EF41C9F1A39004FC000 /* GVLogDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156EEF1C9F1A39004FC000 /* GVLogDetailViewController.m */; };
-		4D156EF51C9F1A39004FC000 /* GVLogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156EF11C9F1A39004FC000 /* GVLogTableViewCell.m */; };
-		4D156EF61C9F1A39004FC000 /* GVLogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156EF31C9F1A39004FC000 /* GVLogTableViewController.m */; };
-		4D156F031C9F1A86004FC000 /* GVCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156F011C9F1A86004FC000 /* GVCoreDataManager.m */; };
-		4D156F061C9F1CA3004FC000 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D156F041C9F1CA3004FC000 /* Model.xcdatamodeld */; };
-		4D156F111C9F1D75004FC000 /* ApplicationLogEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156F0E1C9F1D75004FC000 /* ApplicationLogEntity.m */; };
-		4D156F121C9F1D75004FC000 /* ApplicationLogEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156F101C9F1D75004FC000 /* ApplicationLogEntity+CoreDataProperties.m */; };
-		4D297A931C9F45F10033C887 /* JBChartHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D297A921C9F45F10033C887 /* JBChartHeaderView.m */; };
-		4D297A9B1C9F45FA0033C887 /* JBBarChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D297A971C9F45FA0033C887 /* JBBarChartFooterView.m */; };
-		4D297A9C1C9F45FA0033C887 /* JBLineChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D297A991C9F45FA0033C887 /* JBLineChartFooterView.m */; };
-		4D297AA01C9F46610033C887 /* JBChartInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D297A9F1C9F46610033C887 /* JBChartInformationView.m */; };
-		4D297AAC1C9F48FA0033C887 /* NSArray+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D297AA91C9F48FA0033C887 /* NSArray+JSON.m */; };
-		4D297AAD1C9F48FA0033C887 /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D297AAB1C9F48FA0033C887 /* NSDictionary+JSON.m */; };
-		4D297AB31C9F4A540033C887 /* GVAreaGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D297AB21C9F4A540033C887 /* GVAreaGraphViewController.m */; };
-		4D57E37C1CA1F7D300F4A7C1 /* GVBeaconDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D57E3751CA1F7D300F4A7C1 /* GVBeaconDetailViewController.m */; };
-		4D57E37E1CA1F7D300F4A7C1 /* GVBeaconTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D57E3791CA1F7D300F4A7C1 /* GVBeaconTableViewCell.m */; };
-		4D57E37F1CA1F7D300F4A7C1 /* GVBeaconTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D57E37B1CA1F7D300F4A7C1 /* GVBeaconTableViewController.m */; };
-		4D57E3B51CA2F65300F4A7C1 /* BeaconEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D57E3B21CA2F65300F4A7C1 /* BeaconEntity.m */; };
-		4D57E3B61CA2F65300F4A7C1 /* BeaconEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D57E3B41CA2F65300F4A7C1 /* BeaconEntity+CoreDataProperties.m */; };
-		4D7C431B1CA1BA440041202E /* GVEmulateLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C431A1CA1BA440041202E /* GVEmulateLocationViewController.m */; };
-		4D9BD0401CA076A6008C02A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BD03C1CA076A6008C02A1 /* AppDelegate.m */; };
-		4D9BD0421CA076A6008C02A1 /* GVUserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BD03F1CA076A6008C02A1 /* GVUserPreferences.m */; };
-		4D9BD0461CA0799B008C02A1 /* GVGiottoSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BD0451CA0799B008C02A1 /* GVGiottoSettingTableViewController.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
-		43BD94DDAC7C927440660113 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		4D156EA31C9EB643004FC000 /* GIoTTO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIoTTO.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D156EA71C9EB643004FC000 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4D156EB31C9EB643004FC000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4D156EB51C9EB643004FC000 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4D156EB81C9EB643004FC000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4D156ECF1C9EEA1B004FC000 /* GVBuildingDepotManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVBuildingDepotManager.h; path = GiottoDataViewer/Managers/GVBuildingDepotManager.h; sourceTree = "<group>"; };
-		4D156ED01C9EEA1B004FC000 /* GVBuildingDepotManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVBuildingDepotManager.m; path = GiottoDataViewer/Managers/GVBuildingDepotManager.m; sourceTree = "<group>"; };
-		4D156ED11C9EEA1B004FC000 /* GVLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVLocationManager.h; path = GiottoDataViewer/Managers/GVLocationManager.h; sourceTree = "<group>"; };
-		4D156ED21C9EEA1B004FC000 /* GVLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVLocationManager.m; path = GiottoDataViewer/Managers/GVLocationManager.m; sourceTree = "<group>"; };
-		4D156ED51C9EEA32004FC000 /* GVDeviceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVDeviceTableViewController.h; path = GiottoDataViewer/ViewControllers/Device/GVDeviceTableViewController.h; sourceTree = "<group>"; };
-		4D156ED61C9EEA32004FC000 /* GVDeviceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVDeviceTableViewController.m; path = GiottoDataViewer/ViewControllers/Device/GVDeviceTableViewController.m; sourceTree = "<group>"; };
-		4D156EDE1C9EFA47004FC000 /* GVDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVDevice.h; path = GiottoDataViewer/ViewControllers/Device/GVDevice.h; sourceTree = "<group>"; };
-		4D156EDF1C9EFA47004FC000 /* GVDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVDevice.m; path = GiottoDataViewer/ViewControllers/Device/GVDevice.m; sourceTree = "<group>"; };
-		4D156EEB1C9F1A2F004FC000 /* GVDeviceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVDeviceTableViewCell.h; path = GiottoDataViewer/ViewControllers/Device/GVDeviceTableViewCell.h; sourceTree = "<group>"; };
-		4D156EEC1C9F1A2F004FC000 /* GVDeviceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVDeviceTableViewCell.m; path = GiottoDataViewer/ViewControllers/Device/GVDeviceTableViewCell.m; sourceTree = "<group>"; };
-		4D156EEE1C9F1A39004FC000 /* GVLogDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVLogDetailViewController.h; path = GiottoDataViewer/ViewControllers/Log/GVLogDetailViewController.h; sourceTree = "<group>"; };
-		4D156EEF1C9F1A39004FC000 /* GVLogDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVLogDetailViewController.m; path = GiottoDataViewer/ViewControllers/Log/GVLogDetailViewController.m; sourceTree = "<group>"; };
-		4D156EF01C9F1A39004FC000 /* GVLogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVLogTableViewCell.h; path = GiottoDataViewer/ViewControllers/Log/GVLogTableViewCell.h; sourceTree = "<group>"; };
-		4D156EF11C9F1A39004FC000 /* GVLogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVLogTableViewCell.m; path = GiottoDataViewer/ViewControllers/Log/GVLogTableViewCell.m; sourceTree = "<group>"; };
-		4D156EF21C9F1A39004FC000 /* GVLogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVLogTableViewController.h; path = GiottoDataViewer/ViewControllers/Log/GVLogTableViewController.h; sourceTree = "<group>"; };
-		4D156EF31C9F1A39004FC000 /* GVLogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVLogTableViewController.m; path = GiottoDataViewer/ViewControllers/Log/GVLogTableViewController.m; sourceTree = "<group>"; };
-		4D156F001C9F1A86004FC000 /* GVCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVCoreDataManager.h; path = GiottoDataViewer/CoreData/GVCoreDataManager.h; sourceTree = "<group>"; };
-		4D156F011C9F1A86004FC000 /* GVCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVCoreDataManager.m; path = GiottoDataViewer/CoreData/GVCoreDataManager.m; sourceTree = "<group>"; };
-		4D156F051C9F1CA3004FC000 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		4D156F0D1C9F1D75004FC000 /* ApplicationLogEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationLogEntity.h; path = GiottoDataViewer/CoreData/ApplicationLogEntity.h; sourceTree = "<group>"; };
-		4D156F0E1C9F1D75004FC000 /* ApplicationLogEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationLogEntity.m; path = GiottoDataViewer/CoreData/ApplicationLogEntity.m; sourceTree = "<group>"; };
-		4D156F0F1C9F1D75004FC000 /* ApplicationLogEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ApplicationLogEntity+CoreDataProperties.h"; path = "GiottoDataViewer/CoreData/ApplicationLogEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		4D156F101C9F1D75004FC000 /* ApplicationLogEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ApplicationLogEntity+CoreDataProperties.m"; path = "GiottoDataViewer/CoreData/ApplicationLogEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		4D297A911C9F45F10033C887 /* JBChartHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBChartHeaderView.h; path = GiottoDataViewer/JBChart/Views/Headers/JBChartHeaderView.h; sourceTree = "<group>"; };
-		4D297A921C9F45F10033C887 /* JBChartHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBChartHeaderView.m; path = GiottoDataViewer/JBChart/Views/Headers/JBChartHeaderView.m; sourceTree = "<group>"; };
-		4D297A961C9F45FA0033C887 /* JBBarChartFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBBarChartFooterView.h; path = GiottoDataViewer/JBChart/Views/Footers/JBBarChartFooterView.h; sourceTree = "<group>"; };
-		4D297A971C9F45FA0033C887 /* JBBarChartFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBBarChartFooterView.m; path = GiottoDataViewer/JBChart/Views/Footers/JBBarChartFooterView.m; sourceTree = "<group>"; };
-		4D297A981C9F45FA0033C887 /* JBLineChartFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBLineChartFooterView.h; path = GiottoDataViewer/JBChart/Views/Footers/JBLineChartFooterView.h; sourceTree = "<group>"; };
-		4D297A991C9F45FA0033C887 /* JBLineChartFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBLineChartFooterView.m; path = GiottoDataViewer/JBChart/Views/Footers/JBLineChartFooterView.m; sourceTree = "<group>"; };
-		4D297A9E1C9F46610033C887 /* JBChartInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBChartInformationView.h; path = GiottoDataViewer/JBChart/Views/Misc/JBChartInformationView.h; sourceTree = "<group>"; };
-		4D297A9F1C9F46610033C887 /* JBChartInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBChartInformationView.m; path = GiottoDataViewer/JBChart/Views/Misc/JBChartInformationView.m; sourceTree = "<group>"; };
-		4D297AA21C9F46F50033C887 /* JBColorConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JBColorConstants.h; path = GiottoDataViewer/JBChart/Constants/JBColorConstants.h; sourceTree = "<group>"; };
-		4D297AA31C9F46F50033C887 /* JBConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JBConstants.h; path = GiottoDataViewer/JBChart/Constants/JBConstants.h; sourceTree = "<group>"; };
-		4D297AA41C9F46F50033C887 /* JBFontConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JBFontConstants.h; path = GiottoDataViewer/JBChart/Constants/JBFontConstants.h; sourceTree = "<group>"; };
-		4D297AA51C9F46F50033C887 /* JBStringConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JBStringConstants.h; path = GiottoDataViewer/JBChart/Constants/JBStringConstants.h; sourceTree = "<group>"; };
-		4D297AA61C9F46F50033C887 /* JBUIConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JBUIConstants.h; path = GiottoDataViewer/JBChart/Constants/JBUIConstants.h; sourceTree = "<group>"; };
-		4D297AA81C9F48FA0033C887 /* NSArray+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+JSON.h"; path = "GiottoDataViewer/Utilities/NSArray+JSON.h"; sourceTree = "<group>"; };
-		4D297AA91C9F48FA0033C887 /* NSArray+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+JSON.m"; path = "GiottoDataViewer/Utilities/NSArray+JSON.m"; sourceTree = "<group>"; };
-		4D297AAA1C9F48FA0033C887 /* NSDictionary+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+JSON.h"; path = "GiottoDataViewer/Utilities/NSDictionary+JSON.h"; sourceTree = "<group>"; };
-		4D297AAB1C9F48FA0033C887 /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+JSON.m"; path = "GiottoDataViewer/Utilities/NSDictionary+JSON.m"; sourceTree = "<group>"; };
-		4D297AB11C9F4A540033C887 /* GVAreaGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVAreaGraphViewController.h; path = GiottoDataViewer/ViewControllers/Device/GVAreaGraphViewController.h; sourceTree = "<group>"; };
-		4D297AB21C9F4A540033C887 /* GVAreaGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVAreaGraphViewController.m; path = GiottoDataViewer/ViewControllers/Device/GVAreaGraphViewController.m; sourceTree = "<group>"; };
-		4D57E3741CA1F7D300F4A7C1 /* GVBeaconDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVBeaconDetailViewController.h; path = GiottoDataViewer/ViewControllers/Setting/Beacons/GVBeaconDetailViewController.h; sourceTree = "<group>"; };
-		4D57E3751CA1F7D300F4A7C1 /* GVBeaconDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVBeaconDetailViewController.m; path = GiottoDataViewer/ViewControllers/Setting/Beacons/GVBeaconDetailViewController.m; sourceTree = "<group>"; };
-		4D57E3781CA1F7D300F4A7C1 /* GVBeaconTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVBeaconTableViewCell.h; path = GiottoDataViewer/ViewControllers/Setting/Beacons/GVBeaconTableViewCell.h; sourceTree = "<group>"; };
-		4D57E3791CA1F7D300F4A7C1 /* GVBeaconTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVBeaconTableViewCell.m; path = GiottoDataViewer/ViewControllers/Setting/Beacons/GVBeaconTableViewCell.m; sourceTree = "<group>"; };
-		4D57E37A1CA1F7D300F4A7C1 /* GVBeaconTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVBeaconTableViewController.h; path = GiottoDataViewer/ViewControllers/Setting/Beacons/GVBeaconTableViewController.h; sourceTree = "<group>"; };
-		4D57E37B1CA1F7D300F4A7C1 /* GVBeaconTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVBeaconTableViewController.m; path = GiottoDataViewer/ViewControllers/Setting/Beacons/GVBeaconTableViewController.m; sourceTree = "<group>"; };
-		4D57E3B11CA2F65300F4A7C1 /* BeaconEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeaconEntity.h; path = GiottoDataViewer/CoreData/BeaconEntity.h; sourceTree = "<group>"; };
-		4D57E3B21CA2F65300F4A7C1 /* BeaconEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeaconEntity.m; path = GiottoDataViewer/CoreData/BeaconEntity.m; sourceTree = "<group>"; };
-		4D57E3B31CA2F65300F4A7C1 /* BeaconEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BeaconEntity+CoreDataProperties.h"; path = "GiottoDataViewer/CoreData/BeaconEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		4D57E3B41CA2F65300F4A7C1 /* BeaconEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BeaconEntity+CoreDataProperties.m"; path = "GiottoDataViewer/CoreData/BeaconEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		4D7C43191CA1BA440041202E /* GVEmulateLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVEmulateLocationViewController.h; path = GiottoDataViewer/ViewControllers/Setting/GVEmulateLocationViewController.h; sourceTree = "<group>"; };
-		4D7C431A1CA1BA440041202E /* GVEmulateLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVEmulateLocationViewController.m; path = GiottoDataViewer/ViewControllers/Setting/GVEmulateLocationViewController.m; sourceTree = "<group>"; };
-		4D9BD03B1CA076A6008C02A1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = GiottoDataViewer/AppDelegate.h; sourceTree = "<group>"; };
-		4D9BD03C1CA076A6008C02A1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = GiottoDataViewer/AppDelegate.m; sourceTree = "<group>"; };
-		4D9BD03E1CA076A6008C02A1 /* GVUserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVUserPreferences.h; path = GiottoDataViewer/GVUserPreferences.h; sourceTree = "<group>"; };
-		4D9BD03F1CA076A6008C02A1 /* GVUserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVUserPreferences.m; path = GiottoDataViewer/GVUserPreferences.m; sourceTree = "<group>"; };
-		4D9BD0441CA0799B008C02A1 /* GVGiottoSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVGiottoSettingTableViewController.h; path = GiottoDataViewer/ViewControllers/Setting/GVGiottoSettingTableViewController.h; sourceTree = "<group>"; };
-		4D9BD0451CA0799B008C02A1 /* GVGiottoSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVGiottoSettingTableViewController.m; path = GiottoDataViewer/ViewControllers/Setting/GVGiottoSettingTableViewController.m; sourceTree = "<group>"; };
-		4D9BD0471CA07A5C008C02A1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D9BD04F1CA087C5008C02A1 /* GVNotificationConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GVNotificationConstants.h; sourceTree = "<group>"; };
-		5FAFED4FF1402B91CD95508D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		E5402B54163D6611A6FD471C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		4D156EA01C9EB643004FC000 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3A2E5A1F4B85BC897AE2C563 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		4D156E9A1C9EB643004FC000 = {
-			isa = PBXGroup;
-			children = (
-				4D297A721C9F425C0033C887 /* JBChart */,
-				4D156EF71C9F1A46004FC000 /* CoreData */,
-				4D156EC11C9EE68E004FC000 /* Managers */,
-				4D156EC01C9EE687004FC000 /* ViewControllers */,
-				4D156EA51C9EB643004FC000 /* GiottoDataViewer */,
-				4D297AA71C9F48DD0033C887 /* Utilities */,
-				4D156EA41C9EB643004FC000 /* Products */,
-				946E25A93299B5549807E521 /* Pods */,
-				7B11AE5428A1A58965410834 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		4D156EA41C9EB643004FC000 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4D156EA31C9EB643004FC000 /* GIoTTO.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4D156EA51C9EB643004FC000 /* GiottoDataViewer */ = {
-			isa = PBXGroup;
-			children = (
-				4D9BD04F1CA087C5008C02A1 /* GVNotificationConstants.h */,
-				4D9BD0471CA07A5C008C02A1 /* Info.plist */,
-				4D9BD03B1CA076A6008C02A1 /* AppDelegate.h */,
-				4D9BD03C1CA076A6008C02A1 /* AppDelegate.m */,
-				4D9BD03E1CA076A6008C02A1 /* GVUserPreferences.h */,
-				4D9BD03F1CA076A6008C02A1 /* GVUserPreferences.m */,
-				4D156EB21C9EB643004FC000 /* Main.storyboard */,
-				4D156EB51C9EB643004FC000 /* Assets.xcassets */,
-				4D156EB71C9EB643004FC000 /* LaunchScreen.storyboard */,
-				4D156EA61C9EB643004FC000 /* Supporting Files */,
-			);
-			path = GiottoDataViewer;
-			sourceTree = "<group>";
-		};
-		4D156EA61C9EB643004FC000 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4D156EA71C9EB643004FC000 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4D156EC01C9EE687004FC000 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				4D9BD0431CA07964008C02A1 /* Setting */,
-				4D156EE11C9F19C6004FC000 /* Log */,
-				4D156ECE1C9EE9BA004FC000 /* Device */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		4D156EC11C9EE68E004FC000 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				4D156ECF1C9EEA1B004FC000 /* GVBuildingDepotManager.h */,
-				4D156ED01C9EEA1B004FC000 /* GVBuildingDepotManager.m */,
-				4D156ED11C9EEA1B004FC000 /* GVLocationManager.h */,
-				4D156ED21C9EEA1B004FC000 /* GVLocationManager.m */,
-			);
-			name = Managers;
-			sourceTree = "<group>";
-		};
-		4D156ECE1C9EE9BA004FC000 /* Device */ = {
-			isa = PBXGroup;
-			children = (
-				4D156ED51C9EEA32004FC000 /* GVDeviceTableViewController.h */,
-				4D156ED61C9EEA32004FC000 /* GVDeviceTableViewController.m */,
-				4D156EEB1C9F1A2F004FC000 /* GVDeviceTableViewCell.h */,
-				4D156EEC1C9F1A2F004FC000 /* GVDeviceTableViewCell.m */,
-				4D297AB11C9F4A540033C887 /* GVAreaGraphViewController.h */,
-				4D297AB21C9F4A540033C887 /* GVAreaGraphViewController.m */,
-				4D156EDE1C9EFA47004FC000 /* GVDevice.h */,
-				4D156EDF1C9EFA47004FC000 /* GVDevice.m */,
-			);
-			name = Device;
-			sourceTree = "<group>";
-		};
-		4D156EE11C9F19C6004FC000 /* Log */ = {
-			isa = PBXGroup;
-			children = (
-				4D156EEE1C9F1A39004FC000 /* GVLogDetailViewController.h */,
-				4D156EEF1C9F1A39004FC000 /* GVLogDetailViewController.m */,
-				4D156EF01C9F1A39004FC000 /* GVLogTableViewCell.h */,
-				4D156EF11C9F1A39004FC000 /* GVLogTableViewCell.m */,
-				4D156EF21C9F1A39004FC000 /* GVLogTableViewController.h */,
-				4D156EF31C9F1A39004FC000 /* GVLogTableViewController.m */,
-			);
-			name = Log;
-			sourceTree = "<group>";
-		};
-		4D156EF71C9F1A46004FC000 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				4D57E3B11CA2F65300F4A7C1 /* BeaconEntity.h */,
-				4D57E3B21CA2F65300F4A7C1 /* BeaconEntity.m */,
-				4D57E3B31CA2F65300F4A7C1 /* BeaconEntity+CoreDataProperties.h */,
-				4D57E3B41CA2F65300F4A7C1 /* BeaconEntity+CoreDataProperties.m */,
-				4D156F001C9F1A86004FC000 /* GVCoreDataManager.h */,
-				4D156F011C9F1A86004FC000 /* GVCoreDataManager.m */,
-				4D156F0D1C9F1D75004FC000 /* ApplicationLogEntity.h */,
-				4D156F0E1C9F1D75004FC000 /* ApplicationLogEntity.m */,
-				4D156F0F1C9F1D75004FC000 /* ApplicationLogEntity+CoreDataProperties.h */,
-				4D156F101C9F1D75004FC000 /* ApplicationLogEntity+CoreDataProperties.m */,
-				4D156F041C9F1CA3004FC000 /* Model.xcdatamodeld */,
-			);
-			name = CoreData;
-			sourceTree = "<group>";
-		};
-		4D297A721C9F425C0033C887 /* JBChart */ = {
-			isa = PBXGroup;
-			children = (
-				4D297AA11C9F46EA0033C887 /* Constants */,
-				4D297A7F1C9F42C40033C887 /* Views */,
-			);
-			name = JBChart;
-			sourceTree = "<group>";
-		};
-		4D297A7F1C9F42C40033C887 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4D297A9D1C9F46540033C887 /* Misc */,
-				4D297A841C9F435F0033C887 /* Footers */,
-				4D297A801C9F42DA0033C887 /* Headers */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		4D297A801C9F42DA0033C887 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				4D297A911C9F45F10033C887 /* JBChartHeaderView.h */,
-				4D297A921C9F45F10033C887 /* JBChartHeaderView.m */,
-			);
-			name = Headers;
-			sourceTree = "<group>";
-		};
-		4D297A841C9F435F0033C887 /* Footers */ = {
-			isa = PBXGroup;
-			children = (
-				4D297A961C9F45FA0033C887 /* JBBarChartFooterView.h */,
-				4D297A971C9F45FA0033C887 /* JBBarChartFooterView.m */,
-				4D297A981C9F45FA0033C887 /* JBLineChartFooterView.h */,
-				4D297A991C9F45FA0033C887 /* JBLineChartFooterView.m */,
-			);
-			name = Footers;
-			sourceTree = "<group>";
-		};
-		4D297A9D1C9F46540033C887 /* Misc */ = {
-			isa = PBXGroup;
-			children = (
-				4D297A9E1C9F46610033C887 /* JBChartInformationView.h */,
-				4D297A9F1C9F46610033C887 /* JBChartInformationView.m */,
-			);
-			name = Misc;
-			sourceTree = "<group>";
-		};
-		4D297AA11C9F46EA0033C887 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				4D297AA21C9F46F50033C887 /* JBColorConstants.h */,
-				4D297AA31C9F46F50033C887 /* JBConstants.h */,
-				4D297AA41C9F46F50033C887 /* JBFontConstants.h */,
-				4D297AA51C9F46F50033C887 /* JBStringConstants.h */,
-				4D297AA61C9F46F50033C887 /* JBUIConstants.h */,
-			);
-			name = Constants;
-			sourceTree = "<group>";
-		};
-		4D297AA71C9F48DD0033C887 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				4D297AA81C9F48FA0033C887 /* NSArray+JSON.h */,
-				4D297AA91C9F48FA0033C887 /* NSArray+JSON.m */,
-				4D297AAA1C9F48FA0033C887 /* NSDictionary+JSON.h */,
-				4D297AAB1C9F48FA0033C887 /* NSDictionary+JSON.m */,
-			);
-			name = Utilities;
-			sourceTree = "<group>";
-		};
-		4D57E3731CA1F7C800F4A7C1 /* Beacons */ = {
-			isa = PBXGroup;
-			children = (
-				4D57E3741CA1F7D300F4A7C1 /* GVBeaconDetailViewController.h */,
-				4D57E3751CA1F7D300F4A7C1 /* GVBeaconDetailViewController.m */,
-				4D57E3781CA1F7D300F4A7C1 /* GVBeaconTableViewCell.h */,
-				4D57E3791CA1F7D300F4A7C1 /* GVBeaconTableViewCell.m */,
-				4D57E37A1CA1F7D300F4A7C1 /* GVBeaconTableViewController.h */,
-				4D57E37B1CA1F7D300F4A7C1 /* GVBeaconTableViewController.m */,
-			);
-			name = Beacons;
-			sourceTree = "<group>";
-		};
-		4D9BD0431CA07964008C02A1 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				4D57E3731CA1F7C800F4A7C1 /* Beacons */,
-				4D9BD0441CA0799B008C02A1 /* GVGiottoSettingTableViewController.h */,
-				4D9BD0451CA0799B008C02A1 /* GVGiottoSettingTableViewController.m */,
-				4D7C43191CA1BA440041202E /* GVEmulateLocationViewController.h */,
-				4D7C431A1CA1BA440041202E /* GVEmulateLocationViewController.m */,
-			);
-			name = Setting;
-			sourceTree = "<group>";
-		};
-		7B11AE5428A1A58965410834 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E5402B54163D6611A6FD471C /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		946E25A93299B5549807E521 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5FAFED4FF1402B91CD95508D /* Pods.debug.xcconfig */,
-				43BD94DDAC7C927440660113 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		4D156EA21C9EB643004FC000 /* GiottoDataViewer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4D156EBD1C9EB643004FC000 /* Build configuration list for PBXNativeTarget "GiottoDataViewer" */;
-			buildPhases = (
-				A6621A73F585A68BB1D464F2 /* Check Pods Manifest.lock */,
-				4D156E9F1C9EB643004FC000 /* Sources */,
-				4D156EA01C9EB643004FC000 /* Frameworks */,
-				4D156EA11C9EB643004FC000 /* Resources */,
-				85C47C5BFAD33A97B0F950BB /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GiottoDataViewer;
-			productName = GiottoDataViewer;
-			productReference = 4D156EA31C9EB643004FC000 /* GIoTTO.app */;
-			productType = "com.apple.product-type.application";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		4D156E9B1C9EB643004FC000 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "Eiji Hayashi";
-				TargetAttributes = {
-					4D156EA21C9EB643004FC000 = {
-						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 836Y8J5TFE;
-						SystemCapabilities = {
-							com.apple.BackgroundModes = {
-								enabled = 1;
-							};
-						};
-					};
-				};
-			};
-			buildConfigurationList = 4D156E9E1C9EB643004FC000 /* Build configuration list for PBXProject "GiottoDataViewer" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 4D156E9A1C9EB643004FC000;
-			productRefGroup = 4D156EA41C9EB643004FC000 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				4D156EA21C9EB643004FC000 /* GiottoDataViewer */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		4D156EA11C9EB643004FC000 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4D156EB91C9EB643004FC000 /* LaunchScreen.storyboard in Resources */,
-				4D156EB61C9EB643004FC000 /* Assets.xcassets in Resources */,
-				4D156EB41C9EB643004FC000 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		85C47C5BFAD33A97B0F950BB /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6621A73F585A68BB1D464F2 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		4D156E9F1C9EB643004FC000 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4D9BD0401CA076A6008C02A1 /* AppDelegate.m in Sources */,
-				4D297A931C9F45F10033C887 /* JBChartHeaderView.m in Sources */,
-				4D156F121C9F1D75004FC000 /* ApplicationLogEntity+CoreDataProperties.m in Sources */,
-				4D297AAC1C9F48FA0033C887 /* NSArray+JSON.m in Sources */,
-				4D156ED91C9EEA32004FC000 /* GVDeviceTableViewController.m in Sources */,
-				4D156F061C9F1CA3004FC000 /* Model.xcdatamodeld in Sources */,
-				4D297AB31C9F4A540033C887 /* GVAreaGraphViewController.m in Sources */,
-				4D297A9B1C9F45FA0033C887 /* JBBarChartFooterView.m in Sources */,
-				4D156EF61C9F1A39004FC000 /* GVLogTableViewController.m in Sources */,
-				4D156EED1C9F1A2F004FC000 /* GVDeviceTableViewCell.m in Sources */,
-				4D156EF41C9F1A39004FC000 /* GVLogDetailViewController.m in Sources */,
-				4D297AA01C9F46610033C887 /* JBChartInformationView.m in Sources */,
-				4D156EE01C9EFA47004FC000 /* GVDevice.m in Sources */,
-				4D297A9C1C9F45FA0033C887 /* JBLineChartFooterView.m in Sources */,
-				4D9BD0461CA0799B008C02A1 /* GVGiottoSettingTableViewController.m in Sources */,
-				4D9BD0421CA076A6008C02A1 /* GVUserPreferences.m in Sources */,
-				4D57E37F1CA1F7D300F4A7C1 /* GVBeaconTableViewController.m in Sources */,
-				4D297AAD1C9F48FA0033C887 /* NSDictionary+JSON.m in Sources */,
-				4D156ED31C9EEA1B004FC000 /* GVBuildingDepotManager.m in Sources */,
-				4D57E3B61CA2F65300F4A7C1 /* BeaconEntity+CoreDataProperties.m in Sources */,
-				4D156F111C9F1D75004FC000 /* ApplicationLogEntity.m in Sources */,
-				4D57E37C1CA1F7D300F4A7C1 /* GVBeaconDetailViewController.m in Sources */,
-				4D57E37E1CA1F7D300F4A7C1 /* GVBeaconTableViewCell.m in Sources */,
-				4D7C431B1CA1BA440041202E /* GVEmulateLocationViewController.m in Sources */,
-				4D156EF51C9F1A39004FC000 /* GVLogTableViewCell.m in Sources */,
-				4D57E3B51CA2F65300F4A7C1 /* BeaconEntity.m in Sources */,
-				4D156F031C9F1A86004FC000 /* GVCoreDataManager.m in Sources */,
-				4D156EA81C9EB643004FC000 /* main.m in Sources */,
-				4D156ED41C9EEA1B004FC000 /* GVLocationManager.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4D156EB21C9EB643004FC000 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4D156EB31C9EB643004FC000 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4D156EB71C9EB643004FC000 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4D156EB81C9EB643004FC000 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		4D156EBB1C9EB643004FC000 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		4D156EBC1C9EB643004FC000 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		4D156EBE1C9EB643004FC000 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FAFED4FF1402B91CD95508D /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = GiottoDataViewer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.iotexpedition.ios.giottodataviewer;
-				PRODUCT_NAME = GIoTTO;
-				PROVISIONING_PROFILE = "";
-			};
-			name = Debug;
-		};
-		4D156EBF1C9EB643004FC000 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43BD94DDAC7C927440660113 /* Pods.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = GiottoDataViewer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.iotexpedition.ios.giottodataviewer;
-				PRODUCT_NAME = GIoTTO;
-				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		4D156E9E1C9EB643004FC000 /* Build configuration list for PBXProject "GiottoDataViewer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4D156EBB1C9EB643004FC000 /* Debug */,
-				4D156EBC1C9EB643004FC000 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4D156EBD1C9EB643004FC000 /* Build configuration list for PBXNativeTarget "GiottoDataViewer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4D156EBE1C9EB643004FC000 /* Debug */,
-				4D156EBF1C9EB643004FC000 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		4D156F041C9F1CA3004FC000 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4D156F051C9F1CA3004FC000 /* Model.xcdatamodel */,
-			);
-			currentVersion = 4D156F051C9F1CA3004FC000 /* Model.xcdatamodel */;
-			name = Model.xcdatamodeld;
-			path = GiottoDataViewer/CoreData/Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
-	};
-	rootObject = 4D156E9B1C9EB643004FC000 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>19D5B53240A01A4D0006AEA4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>&#128230; Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-GiottoDataViewer/Pods-GiottoDataViewer-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>3698675F37F0B428396F5E49</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-GiottoDataViewer.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>417793E63A31A6045EE34DEB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3698675F37F0B428396F5E49</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D144E37EA05A1FABF5F03E4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B7104ABE56B2C8463D77D9E3</string>
+				<string>688315013E541BA289E2A3A3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156E9A1C9EB643004FC000</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D297A721C9F425C0033C887</string>
+				<string>4D156EF71C9F1A46004FC000</string>
+				<string>4D156EC11C9EE68E004FC000</string>
+				<string>4D156EC01C9EE687004FC000</string>
+				<string>4D156EA51C9EB643004FC000</string>
+				<string>4D297AA71C9F48DD0033C887</string>
+				<string>4D156EA41C9EB643004FC000</string>
+				<string>4D144E37EA05A1FABF5F03E4</string>
+				<string>A64F688907D4C54353BC7BA8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156E9B1C9EB643004FC000</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0720</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Eiji Hayashi</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>4D156EA21C9EB643004FC000</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.2</string>
+						<key>DevelopmentTeam</key>
+						<string>836Y8J5TFE</string>
+						<key>SystemCapabilities</key>
+						<dict>
+							<key>com.apple.BackgroundModes</key>
+							<dict>
+								<key>enabled</key>
+								<string>1</string>
+							</dict>
+						</dict>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>4D156E9E1C9EB643004FC000</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>4D156E9A1C9EB643004FC000</string>
+			<key>productRefGroup</key>
+			<string>4D156EA41C9EB643004FC000</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>4D156EA21C9EB643004FC000</string>
+			</array>
+		</dict>
+		<key>4D156E9E1C9EB643004FC000</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>4D156EBB1C9EB643004FC000</string>
+				<string>4D156EBC1C9EB643004FC000</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>4D156E9F1C9EB643004FC000</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>4D9BD0401CA076A6008C02A1</string>
+				<string>4D297A931C9F45F10033C887</string>
+				<string>4D156F121C9F1D75004FC000</string>
+				<string>4D297AAC1C9F48FA0033C887</string>
+				<string>4D156ED91C9EEA32004FC000</string>
+				<string>4D156F061C9F1CA3004FC000</string>
+				<string>4D297AB31C9F4A540033C887</string>
+				<string>4D297A9B1C9F45FA0033C887</string>
+				<string>4D156EF61C9F1A39004FC000</string>
+				<string>4D156EED1C9F1A2F004FC000</string>
+				<string>4D156EF41C9F1A39004FC000</string>
+				<string>4D297AA01C9F46610033C887</string>
+				<string>4D156EE01C9EFA47004FC000</string>
+				<string>4D297A9C1C9F45FA0033C887</string>
+				<string>4D9BD0461CA0799B008C02A1</string>
+				<string>4D9BD0421CA076A6008C02A1</string>
+				<string>4D57E37F1CA1F7D300F4A7C1</string>
+				<string>4D297AAD1C9F48FA0033C887</string>
+				<string>4D156ED31C9EEA1B004FC000</string>
+				<string>4D57E3B61CA2F65300F4A7C1</string>
+				<string>4D156F111C9F1D75004FC000</string>
+				<string>4D57E37C1CA1F7D300F4A7C1</string>
+				<string>4D57E37E1CA1F7D300F4A7C1</string>
+				<string>4D7C431B1CA1BA440041202E</string>
+				<string>4D156EF51C9F1A39004FC000</string>
+				<string>4D57E3B51CA2F65300F4A7C1</string>
+				<string>4D156F031C9F1A86004FC000</string>
+				<string>4D156EA81C9EB643004FC000</string>
+				<string>4D156ED41C9EEA1B004FC000</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>4D156EA01C9EB643004FC000</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>417793E63A31A6045EE34DEB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>4D156EA11C9EB643004FC000</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>4D156EB91C9EB643004FC000</string>
+				<string>4D156EB61C9EB643004FC000</string>
+				<string>4D156EB41C9EB643004FC000</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>4D156EA21C9EB643004FC000</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>4D156EBD1C9EB643004FC000</string>
+			<key>buildPhases</key>
+			<array>
+				<string>FC11FFE6E2356055927512B0</string>
+				<string>4D156E9F1C9EB643004FC000</string>
+				<string>4D156EA01C9EB643004FC000</string>
+				<string>4D156EA11C9EB643004FC000</string>
+				<string>DE3336D3296286460FF105B5</string>
+				<string>19D5B53240A01A4D0006AEA4</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>GiottoDataViewer</string>
+			<key>productName</key>
+			<string>GiottoDataViewer</string>
+			<key>productReference</key>
+			<string>4D156EA31C9EB643004FC000</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>4D156EA31C9EB643004FC000</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>GIoTTO.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>4D156EA41C9EB643004FC000</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D156EA31C9EB643004FC000</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EA51C9EB643004FC000</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D9BD04F1CA087C5008C02A1</string>
+				<string>4D9BD0471CA07A5C008C02A1</string>
+				<string>4D9BD03B1CA076A6008C02A1</string>
+				<string>4D9BD03C1CA076A6008C02A1</string>
+				<string>4D9BD03E1CA076A6008C02A1</string>
+				<string>4D9BD03F1CA076A6008C02A1</string>
+				<string>4D156EB21C9EB643004FC000</string>
+				<string>4D156EB51C9EB643004FC000</string>
+				<string>4D156EB71C9EB643004FC000</string>
+				<string>4D156EA61C9EB643004FC000</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>GiottoDataViewer</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EA61C9EB643004FC000</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D156EA71C9EB643004FC000</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EA71C9EB643004FC000</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EA81C9EB643004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156EA71C9EB643004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156EB21C9EB643004FC000</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D156EB31C9EB643004FC000</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EB31C9EB643004FC000</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EB41C9EB643004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156EB21C9EB643004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156EB51C9EB643004FC000</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Assets.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EB61C9EB643004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156EB51C9EB643004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156EB71C9EB643004FC000</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D156EB81C9EB643004FC000</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EB81C9EB643004FC000</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EB91C9EB643004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156EB71C9EB643004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156EBB1C9EB643004FC000</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.2</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>4D156EBC1C9EB643004FC000</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.2</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>4D156EBD1C9EB643004FC000</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>4D156EBE1C9EB643004FC000</string>
+				<string>4D156EBF1C9EB643004FC000</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>4D156EBE1C9EB643004FC000</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>B7104ABE56B2C8463D77D9E3</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>INFOPLIST_FILE</key>
+				<string>GiottoDataViewer/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>org.iotexpedition.ios.giottodataviewer</string>
+				<key>PRODUCT_NAME</key>
+				<string>GIoTTO</string>
+				<key>PROVISIONING_PROFILE</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>4D156EBF1C9EB643004FC000</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>688315013E541BA289E2A3A3</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>INFOPLIST_FILE</key>
+				<string>GiottoDataViewer/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>org.iotexpedition.ios.giottodataviewer</string>
+				<key>PRODUCT_NAME</key>
+				<string>GIoTTO</string>
+				<key>PROVISIONING_PROFILE</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>4D156EC01C9EE687004FC000</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D9BD0431CA07964008C02A1</string>
+				<string>4D156EE11C9F19C6004FC000</string>
+				<string>4D156ECE1C9EE9BA004FC000</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ViewControllers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EC11C9EE68E004FC000</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D156ECF1C9EEA1B004FC000</string>
+				<string>4D156ED01C9EEA1B004FC000</string>
+				<string>4D156ED11C9EEA1B004FC000</string>
+				<string>4D156ED21C9EEA1B004FC000</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Managers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156ECE1C9EE9BA004FC000</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D156ED51C9EEA32004FC000</string>
+				<string>4D156ED61C9EEA32004FC000</string>
+				<string>4D156EEB1C9F1A2F004FC000</string>
+				<string>4D156EEC1C9F1A2F004FC000</string>
+				<string>4D297AB11C9F4A540033C887</string>
+				<string>4D297AB21C9F4A540033C887</string>
+				<string>4D156EDE1C9EFA47004FC000</string>
+				<string>4D156EDF1C9EFA47004FC000</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Device</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156ECF1C9EEA1B004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVBuildingDepotManager.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/Managers/GVBuildingDepotManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156ED01C9EEA1B004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVBuildingDepotManager.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/Managers/GVBuildingDepotManager.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156ED11C9EEA1B004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVLocationManager.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/Managers/GVLocationManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156ED21C9EEA1B004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVLocationManager.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/Managers/GVLocationManager.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156ED31C9EEA1B004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156ED01C9EEA1B004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156ED41C9EEA1B004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156ED21C9EEA1B004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156ED51C9EEA32004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVDeviceTableViewController.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Device/GVDeviceTableViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156ED61C9EEA32004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVDeviceTableViewController.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Device/GVDeviceTableViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156ED91C9EEA32004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156ED61C9EEA32004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156EDE1C9EFA47004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVDevice.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Device/GVDevice.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EDF1C9EFA47004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVDevice.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Device/GVDevice.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EE01C9EFA47004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156EDF1C9EFA47004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156EE11C9F19C6004FC000</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D156EEE1C9F1A39004FC000</string>
+				<string>4D156EEF1C9F1A39004FC000</string>
+				<string>4D156EF01C9F1A39004FC000</string>
+				<string>4D156EF11C9F1A39004FC000</string>
+				<string>4D156EF21C9F1A39004FC000</string>
+				<string>4D156EF31C9F1A39004FC000</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Log</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EEB1C9F1A2F004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVDeviceTableViewCell.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Device/GVDeviceTableViewCell.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EEC1C9F1A2F004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVDeviceTableViewCell.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Device/GVDeviceTableViewCell.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EED1C9F1A2F004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156EEC1C9F1A2F004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156EEE1C9F1A39004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVLogDetailViewController.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Log/GVLogDetailViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EEF1C9F1A39004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVLogDetailViewController.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Log/GVLogDetailViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EF01C9F1A39004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVLogTableViewCell.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Log/GVLogTableViewCell.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EF11C9F1A39004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVLogTableViewCell.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Log/GVLogTableViewCell.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EF21C9F1A39004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVLogTableViewController.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Log/GVLogTableViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EF31C9F1A39004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVLogTableViewController.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Log/GVLogTableViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156EF41C9F1A39004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156EEF1C9F1A39004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156EF51C9F1A39004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156EF11C9F1A39004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156EF61C9F1A39004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156EF31C9F1A39004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156EF71C9F1A46004FC000</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D57E3B11CA2F65300F4A7C1</string>
+				<string>4D57E3B21CA2F65300F4A7C1</string>
+				<string>4D57E3B31CA2F65300F4A7C1</string>
+				<string>4D57E3B41CA2F65300F4A7C1</string>
+				<string>4D156F001C9F1A86004FC000</string>
+				<string>4D156F011C9F1A86004FC000</string>
+				<string>4D156F0D1C9F1D75004FC000</string>
+				<string>4D156F0E1C9F1D75004FC000</string>
+				<string>4D156F0F1C9F1D75004FC000</string>
+				<string>4D156F101C9F1D75004FC000</string>
+				<string>4D156F041C9F1CA3004FC000</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>CoreData</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156F001C9F1A86004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVCoreDataManager.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/CoreData/GVCoreDataManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156F011C9F1A86004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVCoreDataManager.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/CoreData/GVCoreDataManager.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156F031C9F1A86004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156F011C9F1A86004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156F041C9F1CA3004FC000</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D156F051C9F1CA3004FC000</string>
+			</array>
+			<key>currentVersion</key>
+			<string>4D156F051C9F1CA3004FC000</string>
+			<key>isa</key>
+			<string>XCVersionGroup</string>
+			<key>name</key>
+			<string>Model.xcdatamodeld</string>
+			<key>path</key>
+			<string>GiottoDataViewer/CoreData/Model.xcdatamodeld</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+			<key>versionGroupType</key>
+			<string>wrapper.xcdatamodel</string>
+		</dict>
+		<key>4D156F051C9F1CA3004FC000</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.xcdatamodel</string>
+			<key>path</key>
+			<string>Model.xcdatamodel</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156F061C9F1CA3004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156F041C9F1CA3004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156F0D1C9F1D75004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ApplicationLogEntity.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/CoreData/ApplicationLogEntity.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156F0E1C9F1D75004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>ApplicationLogEntity.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/CoreData/ApplicationLogEntity.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156F0F1C9F1D75004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ApplicationLogEntity+CoreDataProperties.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/CoreData/ApplicationLogEntity+CoreDataProperties.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156F101C9F1D75004FC000</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>ApplicationLogEntity+CoreDataProperties.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/CoreData/ApplicationLogEntity+CoreDataProperties.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D156F111C9F1D75004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156F0E1C9F1D75004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D156F121C9F1D75004FC000</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D156F101C9F1D75004FC000</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D297A721C9F425C0033C887</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D297AA11C9F46EA0033C887</string>
+				<string>4D297A7F1C9F42C40033C887</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JBChart</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297A7F1C9F42C40033C887</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D297A9D1C9F46540033C887</string>
+				<string>4D297A841C9F435F0033C887</string>
+				<string>4D297A801C9F42DA0033C887</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Views</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297A801C9F42DA0033C887</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D297A911C9F45F10033C887</string>
+				<string>4D297A921C9F45F10033C887</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Headers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297A841C9F435F0033C887</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D297A961C9F45FA0033C887</string>
+				<string>4D297A971C9F45FA0033C887</string>
+				<string>4D297A981C9F45FA0033C887</string>
+				<string>4D297A991C9F45FA0033C887</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Footers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297A911C9F45F10033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JBChartHeaderView.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/JBChart/Views/Headers/JBChartHeaderView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297A921C9F45F10033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JBChartHeaderView.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/JBChart/Views/Headers/JBChartHeaderView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297A931C9F45F10033C887</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D297A921C9F45F10033C887</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D297A961C9F45FA0033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JBBarChartFooterView.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/JBChart/Views/Footers/JBBarChartFooterView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297A971C9F45FA0033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JBBarChartFooterView.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/JBChart/Views/Footers/JBBarChartFooterView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297A981C9F45FA0033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JBLineChartFooterView.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/JBChart/Views/Footers/JBLineChartFooterView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297A991C9F45FA0033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JBLineChartFooterView.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/JBChart/Views/Footers/JBLineChartFooterView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297A9B1C9F45FA0033C887</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D297A971C9F45FA0033C887</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D297A9C1C9F45FA0033C887</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D297A991C9F45FA0033C887</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D297A9D1C9F46540033C887</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D297A9E1C9F46610033C887</string>
+				<string>4D297A9F1C9F46610033C887</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Misc</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297A9E1C9F46610033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JBChartInformationView.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/JBChart/Views/Misc/JBChartInformationView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297A9F1C9F46610033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JBChartInformationView.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/JBChart/Views/Misc/JBChartInformationView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AA01C9F46610033C887</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D297A9F1C9F46610033C887</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D297AA11C9F46EA0033C887</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D297AA21C9F46F50033C887</string>
+				<string>4D297AA31C9F46F50033C887</string>
+				<string>4D297AA41C9F46F50033C887</string>
+				<string>4D297AA51C9F46F50033C887</string>
+				<string>4D297AA61C9F46F50033C887</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Constants</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AA21C9F46F50033C887</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JBColorConstants.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/JBChart/Constants/JBColorConstants.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AA31C9F46F50033C887</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JBConstants.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/JBChart/Constants/JBConstants.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AA41C9F46F50033C887</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JBFontConstants.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/JBChart/Constants/JBFontConstants.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AA51C9F46F50033C887</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JBStringConstants.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/JBChart/Constants/JBStringConstants.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AA61C9F46F50033C887</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JBUIConstants.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/JBChart/Constants/JBUIConstants.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AA71C9F48DD0033C887</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D297AA81C9F48FA0033C887</string>
+				<string>4D297AA91C9F48FA0033C887</string>
+				<string>4D297AAA1C9F48FA0033C887</string>
+				<string>4D297AAB1C9F48FA0033C887</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Utilities</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AA81C9F48FA0033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSArray+JSON.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/Utilities/NSArray+JSON.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AA91C9F48FA0033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSArray+JSON.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/Utilities/NSArray+JSON.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AAA1C9F48FA0033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSDictionary+JSON.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/Utilities/NSDictionary+JSON.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AAB1C9F48FA0033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSDictionary+JSON.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/Utilities/NSDictionary+JSON.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AAC1C9F48FA0033C887</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D297AA91C9F48FA0033C887</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D297AAD1C9F48FA0033C887</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D297AAB1C9F48FA0033C887</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D297AB11C9F4A540033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVAreaGraphViewController.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Device/GVAreaGraphViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AB21C9F4A540033C887</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVAreaGraphViewController.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Device/GVAreaGraphViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D297AB31C9F4A540033C887</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D297AB21C9F4A540033C887</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D57E3731CA1F7C800F4A7C1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D57E3741CA1F7D300F4A7C1</string>
+				<string>4D57E3751CA1F7D300F4A7C1</string>
+				<string>4D57E3781CA1F7D300F4A7C1</string>
+				<string>4D57E3791CA1F7D300F4A7C1</string>
+				<string>4D57E37A1CA1F7D300F4A7C1</string>
+				<string>4D57E37B1CA1F7D300F4A7C1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Beacons</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D57E3741CA1F7D300F4A7C1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVBeaconDetailViewController.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Setting/Beacons/GVBeaconDetailViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D57E3751CA1F7D300F4A7C1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVBeaconDetailViewController.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Setting/Beacons/GVBeaconDetailViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D57E3781CA1F7D300F4A7C1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVBeaconTableViewCell.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Setting/Beacons/GVBeaconTableViewCell.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D57E3791CA1F7D300F4A7C1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVBeaconTableViewCell.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Setting/Beacons/GVBeaconTableViewCell.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D57E37A1CA1F7D300F4A7C1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVBeaconTableViewController.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Setting/Beacons/GVBeaconTableViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D57E37B1CA1F7D300F4A7C1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVBeaconTableViewController.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Setting/Beacons/GVBeaconTableViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D57E37C1CA1F7D300F4A7C1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D57E3751CA1F7D300F4A7C1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D57E37E1CA1F7D300F4A7C1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D57E3791CA1F7D300F4A7C1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D57E37F1CA1F7D300F4A7C1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D57E37B1CA1F7D300F4A7C1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D57E3B11CA2F65300F4A7C1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>BeaconEntity.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/CoreData/BeaconEntity.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D57E3B21CA2F65300F4A7C1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>BeaconEntity.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/CoreData/BeaconEntity.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D57E3B31CA2F65300F4A7C1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>BeaconEntity+CoreDataProperties.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/CoreData/BeaconEntity+CoreDataProperties.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D57E3B41CA2F65300F4A7C1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>BeaconEntity+CoreDataProperties.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/CoreData/BeaconEntity+CoreDataProperties.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D57E3B51CA2F65300F4A7C1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D57E3B21CA2F65300F4A7C1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D57E3B61CA2F65300F4A7C1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D57E3B41CA2F65300F4A7C1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D7C43191CA1BA440041202E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVEmulateLocationViewController.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Setting/GVEmulateLocationViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D7C431A1CA1BA440041202E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVEmulateLocationViewController.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Setting/GVEmulateLocationViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D7C431B1CA1BA440041202E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D7C431A1CA1BA440041202E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D9BD03B1CA076A6008C02A1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AppDelegate.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/AppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D9BD03C1CA076A6008C02A1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>AppDelegate.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/AppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D9BD03E1CA076A6008C02A1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVUserPreferences.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/GVUserPreferences.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D9BD03F1CA076A6008C02A1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVUserPreferences.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/GVUserPreferences.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D9BD0401CA076A6008C02A1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D9BD03C1CA076A6008C02A1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D9BD0421CA076A6008C02A1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D9BD03F1CA076A6008C02A1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D9BD0431CA07964008C02A1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D57E3731CA1F7C800F4A7C1</string>
+				<string>4D9BD0441CA0799B008C02A1</string>
+				<string>4D9BD0451CA0799B008C02A1</string>
+				<string>4D7C43191CA1BA440041202E</string>
+				<string>4D7C431A1CA1BA440041202E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Setting</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D9BD0441CA0799B008C02A1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GVGiottoSettingTableViewController.h</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Setting/GVGiottoSettingTableViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D9BD0451CA0799B008C02A1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GVGiottoSettingTableViewController.m</string>
+			<key>path</key>
+			<string>GiottoDataViewer/ViewControllers/Setting/GVGiottoSettingTableViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D9BD0461CA0799B008C02A1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4D9BD0451CA0799B008C02A1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D9BD0471CA07A5C008C02A1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D9BD04F1CA087C5008C02A1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>GVNotificationConstants.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>688315013E541BA289E2A3A3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-GiottoDataViewer.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-GiottoDataViewer/Pods-GiottoDataViewer.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A64F688907D4C54353BC7BA8</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3698675F37F0B428396F5E49</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B7104ABE56B2C8463D77D9E3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-GiottoDataViewer.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-GiottoDataViewer/Pods-GiottoDataViewer.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DE3336D3296286460FF105B5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>&#128230; Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-GiottoDataViewer/Pods-GiottoDataViewer-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>FC11FFE6E2356055927512B0</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>&#128230; Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>4D156E9B1C9EB643004FC000</string>
+</dict>
+</plist>

@@ -12,6 +12,8 @@
 #import "GVCoreDataManager.h"
 #import "GVUserPreferences.h"
 
+
+
 @implementation GVBuildingDepotManager
 
 #pragma mark -
@@ -86,7 +88,15 @@ static GVBuildingDepotManager *sharedInstance = nil;
     NSString* json = [self fetchDataFrom:url withOAuthToken:nil method:@"GET" payload:nil];
     if(!json){
         GV_LOG_ERROR(@"Could not fetch OAuth token", message);
+        if(self.delegate) {
+            [self.delegate authenticationDidFail];
+        }
         return;
+    } else {
+        if(self.delegate) {
+            [self.delegate authenticationDidSucceed];
+        }
+        
     }
     
     NSDictionary* dic = [NSDictionary dictionaryWithJson:json];
@@ -112,6 +122,26 @@ static GVBuildingDepotManager *sharedInstance = nil;
     
     return [self parseSensorResponseSearch:json];
 }
+
+- (NSArray *) fetchSensorsWithOwner:(NSString *)owner {
+    GVUserPreferences *preferences = GVUserPreferences.sharedInstance;
+    
+    NSDictionary *dict = @{
+                           @"data" : @{
+                                   @"Owner" : @[owner]
+                                   }
+                           };
+    
+    NSString *url = [NSString stringWithFormat:@"%@:%@%@/search", preferences.giottoServer, preferences.oauthPort, preferences.apiPrefix];
+    NSString *json = [self fetchDataFrom:url withOAuthToken:_accessToken method:@"POST" payload:dict];
+    
+    if(!json){
+        return [[NSArray alloc]init];
+    }
+    
+    return [self parseSensorResponseSearch:json];
+}
+
 
 
 //Parses the json response for fetch sensors
@@ -289,7 +319,6 @@ static GVBuildingDepotManager *sharedInstance = nil;
 
 
 #pragma mark -
-
 
 - (NSString*) fetchDataFrom:(NSString*)url withOAuthToken:(NSString*)token method:(NSString *)httpMethod payload:(NSDictionary *)dict
 {

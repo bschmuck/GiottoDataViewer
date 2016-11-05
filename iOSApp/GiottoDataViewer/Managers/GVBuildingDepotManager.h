@@ -8,13 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol GVBuildingDepotManagerDelegate
+
+- (void)authenticationDidSucceed;
+- (void)authenticationDidFail;
+
+@end
+
 @interface GVBuildingDepotManager : NSObject
-{
-    __strong NSString * _accessToken;
-}
 
 + (GVBuildingDepotManager *)sharedInstance;
 
+@property (strong, nonatomic) NSString *accessToken;
+@property (weak) id<GVBuildingDepotManagerDelegate> delegate;
+
+- (NSArray *) fetchSensorsWithOwner:(NSString *)owner;
 - (NSArray*) fetchSensorsAt:(NSString*)location;
 - (NSArray *) fetchSensorsWithLocationTag:(NSString *)location;
 - (NSArray*) fetchSensorReading:(NSString*)sensorUuid :(NSTimeInterval)startTime :(NSTimeInterval)endTime :(NSString*)resolution;

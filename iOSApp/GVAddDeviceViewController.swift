@@ -21,7 +21,9 @@ class GVAddDeviceViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         self.sensorsTableView.dataSource = self;
         self.sensorsTableView.delegate = self;
-
+        self.navigationController?.navigationBar.tintColor = UIColor.blue
+        self.navigationController?.navigationBar.isTranslucent = true
+        
         // Do any additional setup after loading the view.
     }
 

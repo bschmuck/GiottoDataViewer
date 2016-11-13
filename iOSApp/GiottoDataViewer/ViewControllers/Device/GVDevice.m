@@ -16,6 +16,7 @@
     _uuid = (NSString*)[dic objectForKey:@"uuid"];
     _location = (NSString*)[dic objectForKey:@"location"];
     _type = (NSString*)[dic objectForKey:@"type"];
+    _building = (NSString*)[dic objectForKey:@"building"];
     
     return self;
 }

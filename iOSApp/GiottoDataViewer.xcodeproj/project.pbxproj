@@ -41,6 +41,8 @@
 		4D9BD0461CA0799B008C02A1 /* GVGiottoSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BD0451CA0799B008C02A1 /* GVGiottoSettingTableViewController.m */; };
 		EE2AFC8AB6196822C103D915 /* libPods-GiottoDataViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80559930C0759415B283C3AA /* libPods-GiottoDataViewer.a */; };
 		F0150F751DC3D40B0002F5AB /* GVRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0150F741DC3D40B0002F5AB /* GVRequest.swift */; };
+		F04FFD3F1DD77BE00012E839 /* GVDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04FFD3E1DD77BDF0012E839 /* GVDeviceViewController.swift */; };
+		F04FFD431DD77EC70012E839 /* GVPrivacySettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04FFD421DD77EC70012E839 /* GVPrivacySettingTableViewCell.swift */; };
 		F06301341DCE5517007E543A /* GVSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06301331DCE5517007E543A /* GVSensorViewController.swift */; };
 		F06301361DCE5728007E543A /* GVDeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06301351DCE5728007E543A /* GVDeviceTableViewCell.swift */; };
 		F06301381DCE70A0007E543A /* GVButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06301371DCE70A0007E543A /* GVButton.swift */; };
@@ -121,6 +123,8 @@
 		4D9BD04F1CA087C5008C02A1 /* GVNotificationConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GVNotificationConstants.h; sourceTree = "<group>"; };
 		80559930C0759415B283C3AA /* libPods-GiottoDataViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GiottoDataViewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0150F741DC3D40B0002F5AB /* GVRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVRequest.swift; sourceTree = "<group>"; };
+		F04FFD3E1DD77BDF0012E839 /* GVDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVDeviceViewController.swift; sourceTree = "<group>"; };
+		F04FFD421DD77EC70012E839 /* GVPrivacySettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVPrivacySettingTableViewCell.swift; sourceTree = "<group>"; };
 		F06301331DCE5517007E543A /* GVSensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVSensorViewController.swift; sourceTree = "<group>"; };
 		F06301351DCE5728007E543A /* GVDeviceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVDeviceTableViewCell.swift; sourceTree = "<group>"; };
 		F06301371DCE70A0007E543A /* GVButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVButton.swift; sourceTree = "<group>"; };
@@ -231,7 +235,9 @@
 				4D156EEC1C9F1A2F004FC000 /* GVDeviceTableViewCell.m */,
 				4D297AB11C9F4A540033C887 /* GVAreaGraphViewController.h */,
 				4D297AB21C9F4A540033C887 /* GVAreaGraphViewController.m */,
+				F04FFD421DD77EC70012E839 /* GVPrivacySettingTableViewCell.swift */,
 				F0E855081DB3220900E4E238 /* GVAddDeviceViewController.swift */,
+				F04FFD3E1DD77BDF0012E839 /* GVDeviceViewController.swift */,
 				F06301351DCE5728007E543A /* GVDeviceTableViewCell.swift */,
 				F0E523681DCE2B71005D546B /* GVLoginViewController.swift */,
 				F06301331DCE5517007E543A /* GVSensorViewController.swift */,
@@ -525,8 +531,10 @@
 				4D9BD0461CA0799B008C02A1 /* GVGiottoSettingTableViewController.m in Sources */,
 				4D9BD0421CA076A6008C02A1 /* GVUserPreferences.m in Sources */,
 				F0150F751DC3D40B0002F5AB /* GVRequest.swift in Sources */,
+				F04FFD3F1DD77BE00012E839 /* GVDeviceViewController.swift in Sources */,
 				4D57E37F1CA1F7D300F4A7C1 /* GVBeaconTableViewController.m in Sources */,
 				4D297AAD1C9F48FA0033C887 /* NSDictionary+JSON.m in Sources */,
+				F04FFD431DD77EC70012E839 /* GVPrivacySettingTableViewCell.swift in Sources */,
 				F0E523691DCE2B71005D546B /* GVLoginViewController.swift in Sources */,
 				4D156ED31C9EEA1B004FC000 /* GVBuildingDepotManager.m in Sources */,
 				4D57E3B61CA2F65300F4A7C1 /* BeaconEntity+CoreDataProperties.m in Sources */,

@@ -156,13 +156,14 @@ static GVBuildingDepotManager *sharedInstance = nil;
         NSString * location;
         NSArray *tags = [sensor objectForKey:@"tags"];
         NSString * type;
+        NSString *building = [sensor objectForKey:@"building"];
         for(NSDictionary *tag in tags){
             NSString *key = tag[@"name"];
             if([key isEqualToString:@"location"]) {
                 location = tag[@"value"];
             } else if([key isEqualToString:@"type"]) {
                 type = tag[@"value"];
-            }
+            } 
         }
         
         NSString * sourceName = [sensor objectForKey:@"source_name"];
@@ -190,6 +191,7 @@ static GVBuildingDepotManager *sharedInstance = nil;
                                    location, @"location",
                                    sourceName, @"name",
                                    type, @"type",
+                                   building, @"building",
                                    nil
                                    ];
         GVDevice* device = [[GVDevice alloc]initWithDictionary:deviceDic];

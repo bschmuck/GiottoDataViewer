@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Icons8-Windows-8-Science-Humidity.png",
+      "filename" : "Icons8-Windows-8-Network-Wifi.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Icons8-Windows-8-Science-Humidity@2x.png",
+      "filename" : "Icons8-Windows-8-Network-Wifi@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Icons8-Windows-8-Science-Humidity@3x.png",
+      "filename" : "Icons8-Windows-8-Network-Wifi@3x.png",
       "scale" : "3x"
     }
   ],

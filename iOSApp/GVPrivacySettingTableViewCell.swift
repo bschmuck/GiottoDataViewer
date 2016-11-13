@@ -1,22 +1,18 @@
 //
-//  GVDeviceTableViewCell.swift
+//  GVPrivacySettingTableViewCell.swift
 //  GiottoDataViewer
 //
-//  Created by Brandon Schmuck on 11/5/16.
+//  Created by Brandon Schmuck on 11/12/16.
 //  Copyright © 2016 Eiji Hayashi. All rights reserved.
 //
 
 import UIKit
 
-class GVDeviceTableViewCell: UITableViewCell {
+class GVPrivacySettingTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var settingLabel: UILabel!
+    @IBOutlet weak var settingSwitch: UISwitch!
 
-    @IBOutlet weak var sensorNameLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var deviceImage: UIImageView!
-    
-    @IBOutlet weak var sensorChannelLabel: UILabel!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

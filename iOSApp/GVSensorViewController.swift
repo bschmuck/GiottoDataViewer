@@ -15,6 +15,8 @@ class GVSensorViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var devicesTableView: UITableView!
     
+    var selectedDevice: GVDevice?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
@@ -27,7 +29,7 @@ class GVSensorViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 80
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,12 +40,29 @@ class GVSensorViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.devicesTableView.dequeueReusableCell(withIdentifier: "SensorCell") as! GVDeviceTableViewCell
         let device = devices[indexPath.row]
-        cell.locationLabel.text = device.location
-        cell.sensorNameLabel.text = device.name
-        let deviceImage = "\(device.type!)Icon"
-        if let image = UIImage(named: deviceImage) {
-            cell.deviceImage.image = image
+        cell.locationLabel.text = device.building
+        
+        let deviceParams = device.name.components(separatedBy: "_")
+        
+        
+        if deviceParams.count > 3 {
+            cell.sensorNameLabel.text = "SuperSensor \(deviceParams[1])"
+            cell.sensorChannelLabel.text = "\(deviceParams[2]) - \(deviceParams[3])"
+            cell.selectionStyle = .none;
+            let deviceImage = "\(deviceParams[2])Icon"
+            if let image = UIImage(named: deviceImage) {
+                cell.deviceImage.image = image
+            }
+        } else {
+            cell.sensorNameLabel.text = deviceParams[0]
+            cell.selectionStyle = .none;
+            let deviceImage = "\(device.type!)Icon"
+            if let image = UIImage(named: deviceImage) {
+                cell.deviceImage.image = image
+            }
         }
+        
+
         return cell
     }
     
@@ -74,6 +93,17 @@ class GVSensorViewController: UIViewController, UITableViewDelegate, UITableView
                 self.devices.append(device as! GVDevice)
             }
             self.devicesTableView.reloadData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedDevice = self.devices[indexPath.row]
+        self.performSegue(withIdentifier: "showDetails", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GVDeviceViewController {
+            vc.device = self.selectedDevice
         }
     }
 

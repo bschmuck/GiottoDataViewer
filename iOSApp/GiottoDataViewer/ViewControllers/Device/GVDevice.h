@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSString * uuid;
 @property (nonatomic, readonly) NSString * location;
 @property (nonatomic, readonly) NSString * type;
+@property (nonatomic, readonly) NSString * building;
 
 - (id) initWithDictionary:(NSDictionary*)dic;
 

@@ -33,6 +33,7 @@ class GVLoginViewController: UIViewController, GVBuildingDepotManagerDelegate {
     }
     
     func authenticationDidFail() {
+        
     }
     
     func authenticationDidSucceed() {

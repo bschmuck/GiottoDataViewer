@@ -11,6 +11,7 @@ import UIKit
 class GVAddDeviceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var sensorsTableView: UITableView!
     
+    @IBOutlet weak var deviceNameField: UITextField!
     @IBOutlet weak var deviceIDField: UITextField!
     
     let sensors = ["Accelerometer", "EMI", "Mic", "Motion", "Temperature", "Barometer", "Humidity", "Wifi", "Color", "Luminescence", "Geye", "Magnometer"];
@@ -23,6 +24,8 @@ class GVAddDeviceViewController: UIViewController, UITableViewDataSource, UITabl
         self.sensorsTableView.delegate = self;
         self.navigationController?.navigationBar.tintColor = UIColor.blue
         self.navigationController?.navigationBar.isTranslucent = true
+        deviceNameField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        deviceIDField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
         
         // Do any additional setup after loading the view.
     }
@@ -39,10 +42,20 @@ class GVAddDeviceViewController: UIViewController, UITableViewDataSource, UITabl
 
 
     @IBAction func addNewDevice(_ sender: AnyObject) {
-        if let deviceID = deviceIDField.text {
+        if let deviceID = deviceIDField.text, let deviceName = deviceNameField.text {
+            
+//            var sensorDicts = [Dictionary<String, String>]()
+            
+//            for i in 0..<231 {
+//                let dict = [
+//                    "building" : "Google Bldg SL100",
+//                    "identifier" : \(deviceID)
+//                ]
+//            }
+//            
             let dict = [
                 "data" : [
-                    "name" : "Test Sensor",
+                    "name" : deviceName,
                     "identifier" : deviceID,
                     "building" : "Wean"
                     ]

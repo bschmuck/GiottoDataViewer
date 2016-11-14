@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GVUserPreferences.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    [GVUserPreferences sharedInstance].giottoServer = @"https://bd-exp.andrew.cmu.edu";
+    [GVUserPreferences sharedInstance].giottoPort = @"81";
     //GVCoreDataManager* manager = [GVCoreDataManager sharedInstance];
     //[manager addApplicationLogMessage:@"test" detail:@"detail" level:1];
     _locationManager = [GVLocationManager sharedInstance];

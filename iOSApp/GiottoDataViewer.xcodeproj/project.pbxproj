@@ -418,7 +418,7 @@
 				TargetAttributes = {
 					4D156EA21C9EB643004FC000 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 836Y8J5TFE;
+						DevelopmentTeam = 729M7KPK2R;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -663,10 +663,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 729M7KPK2R;
 				INFOPLIST_FILE = GiottoDataViewer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.iotexpedition.ios.giottodataviewer;
+				PRODUCT_BUNDLE_IDENTIFIER = org.iotexpedition.ios.giottodataviewer2;
 				PRODUCT_NAME = GIoTTO;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GiottoDataViewer-Bridging-Header.h";
@@ -683,10 +684,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 729M7KPK2R;
 				INFOPLIST_FILE = GiottoDataViewer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.iotexpedition.ios.giottodataviewer;
+				PRODUCT_BUNDLE_IDENTIFIER = org.iotexpedition.ios.giottodataviewer2;
 				PRODUCT_NAME = GIoTTO;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GiottoDataViewer-Bridging-Header.h";

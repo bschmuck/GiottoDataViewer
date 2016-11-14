@@ -45,9 +45,9 @@ class GVSensorViewController: UIViewController, UITableViewDelegate, UITableView
         let deviceParams = device.name.components(separatedBy: "_")
         
         
-        if deviceParams.count > 3 {
+        if deviceParams.count > 4 {
             cell.sensorNameLabel.text = "SuperSensor \(deviceParams[1])"
-            cell.sensorChannelLabel.text = "\(deviceParams[2]) - \(deviceParams[3])"
+            cell.sensorChannelLabel.text = "\(deviceParams[2]) - \(deviceParams[3]) - \(deviceParams[4])"
             cell.selectionStyle = .none;
             let deviceImage = "\(deviceParams[2])Icon"
             if let image = UIImage(named: deviceImage) {

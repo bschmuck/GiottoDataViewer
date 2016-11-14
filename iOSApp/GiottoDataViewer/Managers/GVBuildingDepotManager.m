@@ -73,6 +73,8 @@ static GVBuildingDepotManager *sharedInstance = nil;
     GV_LOG_VERBOSE(@"Fetch OAuth token", message);
     
     NSString* server = [[GVUserPreferences sharedInstance] giottoServer];
+    
+    
     NSString* oauthPort = [[GVUserPreferences sharedInstance] oauthPort];
 
     //NSString* apiPrefix = [[GVUserPreferences sharedInstance]apiPrefix];
@@ -131,6 +133,7 @@ static GVBuildingDepotManager *sharedInstance = nil;
                                    @"Owner" : @[owner]
                                    }
                            };
+    
     
     NSString *url = [NSString stringWithFormat:@"%@:%@%@/search", preferences.giottoServer, preferences.oauthPort, preferences.apiPrefix];
     NSString *json = [self fetchDataFrom:url withOAuthToken:_accessToken method:@"POST" payload:dict];

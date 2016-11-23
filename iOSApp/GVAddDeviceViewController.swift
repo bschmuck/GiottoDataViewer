@@ -39,6 +39,68 @@ class GVAddDeviceViewController: UIViewController, UITableViewDataSource, UITabl
         self.dismiss(animated: true, completion: nil)
     }
     
+    //Generates a dictionary for a sequence of 231 data streams generated for
+    //each SuperSensor.
+    func generateSensorDict(deviceID: String, building: String, baseIdentifier: String) -> Array<Dictionary<String, String>> {
+        
+        var sensorDicts = Array<Dictionary<String, String>>();
+        
+        let sensorChannels = [
+            "Accelerometer" : 3,
+            "Microphone" : 1,
+            "EMI" : 1,
+            "Temperature" : 1,
+            "Barometer" : 1,
+            "Humidity" : 1,
+            "Illumination" : 1,
+            "Color" : 3,
+            "Magnetometer" : 3,
+            "Wifi" : 1,
+            "Motion" : 1,
+            "Geye" : 16
+        ]
+        
+        let stats = ["Min", "Max", "Sum", "Avg", "Stdvar", "Range", "Centroid"]
+        
+        //Numbers for identifier key values
+        let idDict = [
+            "Min" : 0,
+            "Max" : 1,
+            "Sum" : 2,
+            "Avg" : 3,
+            "Stdvar" : 4,
+            "Range" : 5,
+            "Centroid" : 6,
+            "Accelerometer" : 0,
+            "Microphone" : 1,
+            "EMI" : 2,
+            "Temperature" : 4,
+            "Barometer" : 5,
+            "Humidity" : 6,
+            "Illumination" : 7,
+            "Color" : 8,
+            "Magnetometer" : 9,
+            "Wifi" : 10,
+            "Motion" : 11,
+            "Geye" : 12
+        ]
+        
+        for sensor in sensorChannels {
+            let channelCount = sensor.value
+            for i in 0..<channelCount {
+                for stat in stats {
+                    let dict = [
+                        "building" : building,
+                        "identifier" : "\(baseIdentifier)_\((idDict[sensor.key])!)_\(i)_\((idDict[stat])!)",
+                        "name" : "SuperSensor_\(deviceID)_\(sensor.key)_ch\(i)_\(stat)"
+                    ]
+                    sensorDicts.append(dict)
+                }
+            }
+        }
+        return sensorDicts;
+    }
+    
 
 
     @IBAction func addNewDevice(_ sender: AnyObject) {
@@ -52,24 +114,22 @@ class GVAddDeviceViewController: UIViewController, UITableViewDataSource, UITabl
 //                    "identifier" : \(deviceID)
 //                ]
 //            }
-//            
-            let dict = [
-                "data" : [
-                    "name" : deviceName,
-                    "identifier" : deviceID,
-                    "building" : "Wean"
-                    ]
-                ]
-            let urlString = GVRequest.urlString(endpoint: "/sensor")
-            let request = GVRequest.urlRequest(urlString: urlString, token: depotManager!.accessToken, httpMethod: .POST, data: dict as Dictionary<String, AnyObject>?)
-            GVRequest.urlSession(request: request, callback: { (data, error) in
-                if((error) != nil) {
-                    print("Error Occurred: \(error)")
-                } else {
-                    print("Successfully enrolled sensor")
-                    print(data)
-                }
-            })
+            
+            let sensorDicts = generateSensorDict(deviceID: deviceID, building: "Wean", baseIdentifier: "23543rfd");
+            
+            for sensorDict in sensorDicts {
+                let dict = ["data": sensorDict]
+                let urlString = GVRequest.urlString(endpoint: "/sensor")
+                let request = GVRequest.urlRequest(urlString: urlString, token: depotManager!.accessToken, httpMethod: .POST, data: dict as Dictionary<String, AnyObject>?)
+                GVRequest.urlSession(request: request, callback: { (data, error) in
+                    if((error) != nil) {
+                        print("Error Occurred: \(error)")
+                    } else {
+                        print("Successfully enrolled sensor")
+                        print(data)
+                    }
+                })
+            }
         }
         self.dismiss(animated: true, completion: nil)
     }

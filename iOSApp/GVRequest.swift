@@ -11,6 +11,7 @@ import UIKit
 enum urlMethod {
     case GET
     case POST
+    case PUT
 }
 
 class GVRequest: NSObject {
@@ -47,8 +48,13 @@ class GVRequest: NSObject {
         switch httpMethod.self {
             case .GET:
                 request.httpMethod = "GET"
+                break
             case .POST:
                 request.httpMethod = "POST"
+                break
+            case .PUT:
+                request.httpMethod = "PUT"
+                break
         }
         
         request.setValue("application/json", forHTTPHeaderField: "accept")

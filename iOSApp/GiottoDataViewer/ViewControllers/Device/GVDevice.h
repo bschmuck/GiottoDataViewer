@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) NSString * location;
 @property (nonatomic, readonly) NSString * type;
 @property (nonatomic, readonly) NSString * building;
+@property (nonatomic, readonly) NSString * deviceID;
 
 - (id) initWithDictionary:(NSDictionary*)dic;
 

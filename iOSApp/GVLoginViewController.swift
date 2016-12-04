@@ -16,6 +16,7 @@ class GVLoginViewController: UIViewController, GVBuildingDepotManagerDelegate {
         super.viewDidLoad()
         clientIDTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
         clientSecretTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        GVNodeServerManager.sharedInstance.getToken()
         // Do any additional setup after loading the view.
     }
 

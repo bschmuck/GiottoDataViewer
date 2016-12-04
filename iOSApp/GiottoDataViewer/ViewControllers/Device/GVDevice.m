@@ -17,6 +17,7 @@
     _location = (NSString*)[dic objectForKey:@"location"];
     _type = (NSString*)[dic objectForKey:@"type"];
     _building = (NSString*)[dic objectForKey:@"building"];
+    _deviceID = (NSString*)[dic objectForKey:@"sourceID"];
     
     return self;
 }

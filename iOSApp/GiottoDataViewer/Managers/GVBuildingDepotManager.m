@@ -145,6 +145,20 @@ static GVBuildingDepotManager *sharedInstance = nil;
     return [self parseSensorResponseSearch:json];
 }
 
+- (NSDictionary *)getSuperSensors:(NSArray *)sensorStreams {
+    NSMutableDictionary *sensorDict = [[NSMutableDictionary alloc] init];
+    for(GVDevice *sensor in sensorStreams) {
+        NSString *sensorName = sensor.name;
+        NSArray *nameComponents = [sensorName componentsSeparatedByString:@"_"];
+        if(nameComponents.count == 5) {
+            sensorDict[nameComponents[1]] = sensor.building;
+        } else {
+            sensorDict[sensor.name] = sensor.building;
+        }
+    }
+    return sensorDict;
+}
+
 
 
 //Parses the json response for fetch sensors
@@ -170,6 +184,8 @@ static GVBuildingDepotManager *sharedInstance = nil;
         }
         
         NSString * sourceName = [sensor objectForKey:@"source_name"];
+        NSString *sourceID = ([sensor objectForKey:@"source_identifier"]);
+        sourceID = [sourceID componentsSeparatedByString:@"_"][0];
 
         
         if(!name){
@@ -195,6 +211,7 @@ static GVBuildingDepotManager *sharedInstance = nil;
                                    sourceName, @"name",
                                    type, @"type",
                                    building, @"building",
+                                   sourceID, @"sourceID",
                                    nil
                                    ];
         GVDevice* device = [[GVDevice alloc]initWithDictionary:deviceDic];

@@ -16,6 +16,8 @@ class GVSensorViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var devicesTableView: UITableView!
     
     var selectedDevice: GVDevice?
+    var superSensorBuildings: [AnyHashable: Any]?
+    var superSensors: Array<String>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,35 +35,45 @@ class GVSensorViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return devices.count
+        if let superSensors = superSensors {
+            return superSensors.count
+        } else {
+            return 0;
+        }
     }
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.devicesTableView.dequeueReusableCell(withIdentifier: "SensorCell") as! GVDeviceTableViewCell
-        let device = devices[indexPath.row]
-        cell.locationLabel.text = device.building
+//        let device = devices[indexPath.row]
+//        cell.locationLabel.text = device.building
         
-        let deviceParams = device.name.components(separatedBy: "_")
+//        let deviceParams = device.name.components(separatedBy: "_")
+        
+        let sensor = superSensors![indexPath.row] 
+        let building = superSensorBuildings![sensor]
+        cell.sensorNameLabel.text = sensor
+        cell.selectionStyle = .none
+        cell.locationLabel.text = building as! String?
         
         
-        if deviceParams.count > 4 {
-            cell.sensorNameLabel.text = "SuperSensor \(deviceParams[1])"
-            cell.sensorChannelLabel.text = "\(deviceParams[2]) - \(deviceParams[3]) - \(deviceParams[4])"
-            cell.selectionStyle = .none;
-            let deviceImage = "\(deviceParams[2])Icon"
-            if let image = UIImage(named: deviceImage) {
-                cell.deviceImage.image = image
-            }
-        } else {
-            cell.sensorNameLabel.text = deviceParams[0]
-            cell.selectionStyle = .none;
-            let deviceImage = "\(device.type!)Icon"
-            if let image = UIImage(named: deviceImage) {
-                cell.deviceImage.image = image
-            }
-        }
-        
+//        if deviceParams.count > 4 {
+//            cell.sensorNameLabel.text = "SuperSensor \(deviceParams[1])"
+//            //cell.sensorChannelLabel.text = "\(deviceParams[2]) - \(deviceParams[3]) - \(deviceParams[4])"
+//            cell.selectionStyle = .none;
+//            //let deviceImage = "\(deviceParams[2])Icon"
+////            if let image = UIImage(named: deviceImage) {
+////                cell.deviceImage.image = image
+////            }
+//        } else {
+//            cell.sensorNameLabel.text = deviceParams[0]
+//            cell.selectionStyle = .none;
+//            let deviceImage = "\(device.type!)Icon"
+//            if let image = UIImage(named: deviceImage) {
+//                cell.deviceImage.image = image
+//            }
+//        }
+//        
 
         return cell
     }
@@ -78,32 +90,43 @@ class GVSensorViewController: UIViewController, UITableViewDelegate, UITableView
         let locations = locationManager?.currentLocations()
         for location in locations! {
             let deviceArray = bdManager?.fetchSensors(withLocationTag: location as! String)
+            
             self.devices.removeAll()
             for device in deviceArray! {
-                self.devices.append(device as! GVDevice)
+                if let device = device as? GVDevice {
+                    self.devices.append(device)
+                    GVSelectedDeviceInfo.sharedInstance.deviceDict[device.name] = device
+                }
             }
         }
     }
     @IBAction func searchByUser(_ sender: AnyObject) {
         if let text = searchField.text {
             let bdManager = GVBuildingDepotManager.sharedInstance()
-            let deviceArray = bdManager?.fetchSensors(withOwner: text)
-            self.devices.removeAll()
-            for device in deviceArray! {
-                self.devices.append(device as! GVDevice)
+            if let deviceArray = bdManager!.fetchSensors(withOwner: text) {
+                superSensorBuildings = bdManager?.getSuperSensors(deviceArray)
+                superSensors = Array(superSensorBuildings!.keys) as? Array<String>
+            
+                self.devices.removeAll()
+                for device in deviceArray {
+                    if let device = device as? GVDevice {
+                        self.devices.append(device)
+                        GVSelectedDeviceInfo.sharedInstance.deviceDict[device.name] = device
+                    }
+                }
+                self.devicesTableView.reloadData()
             }
-            self.devicesTableView.reloadData()
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedDevice = self.devices[indexPath.row]
-        self.performSegue(withIdentifier: "showDetails", sender: nil)
+//        self.selectedDevice = self.superSensors![indexPath.row]
+        GVSelectedDeviceInfo.sharedInstance.deviceName = self.superSensors?[indexPath.row]
+        self.performSegue(withIdentifier: "showSensors", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? GVDeviceViewController {
-            vc.device = self.selectedDevice
         }
     }
 

@@ -27,5 +27,6 @@
 - (NSArray *) fetchSensorsWithLocationTag:(NSString *)location;
 - (NSArray*) fetchSensorReading:(NSString*)sensorUuid :(NSTimeInterval)startTime :(NSTimeInterval)endTime :(NSString*)resolution;
 - (void) fetchOAuthToken:(NSString*)appId forKey:(NSString*)appKey;
+- (NSDictionary *)getSuperSensors:(NSArray *)sensorStreams;
 
 @end

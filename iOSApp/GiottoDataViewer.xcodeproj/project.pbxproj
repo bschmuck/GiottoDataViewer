@@ -41,6 +41,12 @@
 		4D9BD0461CA0799B008C02A1 /* GVGiottoSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BD0451CA0799B008C02A1 /* GVGiottoSettingTableViewController.m */; };
 		EE2AFC8AB6196822C103D915 /* libPods-GiottoDataViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80559930C0759415B283C3AA /* libPods-GiottoDataViewer.a */; };
 		F0150F751DC3D40B0002F5AB /* GVRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0150F741DC3D40B0002F5AB /* GVRequest.swift */; };
+		F02495291DEA889E009641F3 /* GVNodeServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02495281DEA889E009641F3 /* GVNodeServerManager.swift */; };
+		F030D85B1DE724D4009F1EDF /* GVSensorTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F030D85A1DE724D4009F1EDF /* GVSensorTypeTableViewController.swift */; };
+		F030D85D1DE72528009F1EDF /* GVTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F030D85C1DE72528009F1EDF /* GVTypeCell.swift */; };
+		F030D85F1DE726DD009F1EDF /* GVSelectedDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F030D85E1DE726DD009F1EDF /* GVSelectedDeviceInfo.swift */; };
+		F030D8631DE7281C009F1EDF /* GVChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F030D8621DE7281C009F1EDF /* GVChannelCell.swift */; };
+		F030D8651DE72861009F1EDF /* GVChannelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F030D8641DE72861009F1EDF /* GVChannelTableViewController.swift */; };
 		F04FFD3F1DD77BE00012E839 /* GVDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04FFD3E1DD77BDF0012E839 /* GVDeviceViewController.swift */; };
 		F04FFD431DD77EC70012E839 /* GVPrivacySettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04FFD421DD77EC70012E839 /* GVPrivacySettingTableViewCell.swift */; };
 		F06301341DCE5517007E543A /* GVSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06301331DCE5517007E543A /* GVSensorViewController.swift */; };
@@ -123,6 +129,12 @@
 		4D9BD04F1CA087C5008C02A1 /* GVNotificationConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GVNotificationConstants.h; sourceTree = "<group>"; };
 		80559930C0759415B283C3AA /* libPods-GiottoDataViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GiottoDataViewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0150F741DC3D40B0002F5AB /* GVRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVRequest.swift; sourceTree = "<group>"; };
+		F02495281DEA889E009641F3 /* GVNodeServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVNodeServerManager.swift; sourceTree = "<group>"; };
+		F030D85A1DE724D4009F1EDF /* GVSensorTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVSensorTypeTableViewController.swift; sourceTree = "<group>"; };
+		F030D85C1DE72528009F1EDF /* GVTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVTypeCell.swift; sourceTree = "<group>"; };
+		F030D85E1DE726DD009F1EDF /* GVSelectedDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVSelectedDeviceInfo.swift; sourceTree = "<group>"; };
+		F030D8621DE7281C009F1EDF /* GVChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVChannelCell.swift; sourceTree = "<group>"; };
+		F030D8641DE72861009F1EDF /* GVChannelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVChannelTableViewController.swift; sourceTree = "<group>"; };
 		F04FFD3E1DD77BDF0012E839 /* GVDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVDeviceViewController.swift; sourceTree = "<group>"; };
 		F04FFD421DD77EC70012E839 /* GVPrivacySettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVPrivacySettingTableViewCell.swift; sourceTree = "<group>"; };
 		F06301331DCE5517007E543A /* GVSensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVSensorViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +233,7 @@
 				F0150F741DC3D40B0002F5AB /* GVRequest.swift */,
 				4D156ED11C9EEA1B004FC000 /* GVLocationManager.h */,
 				4D156ED21C9EEA1B004FC000 /* GVLocationManager.m */,
+				F030D85E1DE726DD009F1EDF /* GVSelectedDeviceInfo.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -233,14 +246,18 @@
 				4D156ED61C9EEA32004FC000 /* GVDeviceTableViewController.m */,
 				4D156EEB1C9F1A2F004FC000 /* GVDeviceTableViewCell.h */,
 				4D156EEC1C9F1A2F004FC000 /* GVDeviceTableViewCell.m */,
+				F030D85C1DE72528009F1EDF /* GVTypeCell.swift */,
+				F030D8621DE7281C009F1EDF /* GVChannelCell.swift */,
 				4D297AB11C9F4A540033C887 /* GVAreaGraphViewController.h */,
 				4D297AB21C9F4A540033C887 /* GVAreaGraphViewController.m */,
 				F04FFD421DD77EC70012E839 /* GVPrivacySettingTableViewCell.swift */,
 				F0E855081DB3220900E4E238 /* GVAddDeviceViewController.swift */,
 				F04FFD3E1DD77BDF0012E839 /* GVDeviceViewController.swift */,
 				F06301351DCE5728007E543A /* GVDeviceTableViewCell.swift */,
+				F030D8641DE72861009F1EDF /* GVChannelTableViewController.swift */,
 				F0E523681DCE2B71005D546B /* GVLoginViewController.swift */,
 				F06301331DCE5517007E543A /* GVSensorViewController.swift */,
+				F030D85A1DE724D4009F1EDF /* GVSensorTypeTableViewController.swift */,
 				4D156EDE1C9EFA47004FC000 /* GVDevice.h */,
 				4D156EDF1C9EFA47004FC000 /* GVDevice.m */,
 				F0E855071DB3220800E4E238 /* GiottoDataViewer-Bridging-Header.h */,
@@ -270,6 +287,7 @@
 				4D57E3B41CA2F65300F4A7C1 /* BeaconEntity+CoreDataProperties.m */,
 				4D156F001C9F1A86004FC000 /* GVCoreDataManager.h */,
 				4D156F011C9F1A86004FC000 /* GVCoreDataManager.m */,
+				F02495281DEA889E009641F3 /* GVNodeServerManager.swift */,
 				4D156F0D1C9F1D75004FC000 /* ApplicationLogEntity.h */,
 				4D156F0E1C9F1D75004FC000 /* ApplicationLogEntity.m */,
 				4D156F0F1C9F1D75004FC000 /* ApplicationLogEntity+CoreDataProperties.h */,
@@ -512,13 +530,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F030D8631DE7281C009F1EDF /* GVChannelCell.swift in Sources */,
 				4D9BD0401CA076A6008C02A1 /* AppDelegate.m in Sources */,
 				4D297A931C9F45F10033C887 /* JBChartHeaderView.m in Sources */,
+				F030D8651DE72861009F1EDF /* GVChannelTableViewController.swift in Sources */,
 				4D156F121C9F1D75004FC000 /* ApplicationLogEntity+CoreDataProperties.m in Sources */,
 				4D297AAC1C9F48FA0033C887 /* NSArray+JSON.m in Sources */,
 				4D156ED91C9EEA32004FC000 /* GVDeviceTableViewController.m in Sources */,
 				4D156F061C9F1CA3004FC000 /* Model.xcdatamodeld in Sources */,
 				4D297AB31C9F4A540033C887 /* GVAreaGraphViewController.m in Sources */,
+				F02495291DEA889E009641F3 /* GVNodeServerManager.swift in Sources */,
 				4D297A9B1C9F45FA0033C887 /* JBBarChartFooterView.m in Sources */,
 				F06301361DCE5728007E543A /* GVDeviceTableViewCell.swift in Sources */,
 				4D156EF61C9F1A39004FC000 /* GVLogTableViewController.m in Sources */,
@@ -526,6 +547,7 @@
 				4D156EF41C9F1A39004FC000 /* GVLogDetailViewController.m in Sources */,
 				4D297AA01C9F46610033C887 /* JBChartInformationView.m in Sources */,
 				4D156EE01C9EFA47004FC000 /* GVDevice.m in Sources */,
+				F030D85B1DE724D4009F1EDF /* GVSensorTypeTableViewController.swift in Sources */,
 				F06301381DCE70A0007E543A /* GVButton.swift in Sources */,
 				4D297A9C1C9F45FA0033C887 /* JBLineChartFooterView.m in Sources */,
 				4D9BD0461CA0799B008C02A1 /* GVGiottoSettingTableViewController.m in Sources */,
@@ -542,9 +564,11 @@
 				F0E855091DB3220900E4E238 /* GVAddDeviceViewController.swift in Sources */,
 				4D57E37C1CA1F7D300F4A7C1 /* GVBeaconDetailViewController.m in Sources */,
 				4D57E37E1CA1F7D300F4A7C1 /* GVBeaconTableViewCell.m in Sources */,
+				F030D85F1DE726DD009F1EDF /* GVSelectedDeviceInfo.swift in Sources */,
 				4D7C431B1CA1BA440041202E /* GVEmulateLocationViewController.m in Sources */,
 				4D156EF51C9F1A39004FC000 /* GVLogTableViewCell.m in Sources */,
 				F0C9AA171DBD09A8005A95EB /* GVPrivacyTableViewCell.swift in Sources */,
+				F030D85D1DE72528009F1EDF /* GVTypeCell.swift in Sources */,
 				4D57E3B51CA2F65300F4A7C1 /* BeaconEntity.m in Sources */,
 				4D156F031C9F1A86004FC000 /* GVCoreDataManager.m in Sources */,
 				F06301341DCE5517007E543A /* GVSensorViewController.swift in Sources */,

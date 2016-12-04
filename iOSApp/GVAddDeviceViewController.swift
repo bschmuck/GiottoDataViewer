@@ -14,7 +14,7 @@ class GVAddDeviceViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var deviceNameField: UITextField!
     @IBOutlet weak var deviceIDField: UITextField!
     
-    let sensors = ["Accelerometer", "EMI", "Mic", "Motion", "Temperature", "Barometer", "Humidity", "Wifi", "Color", "Luminescence", "Geye", "Magnometer"];
+    let sensors = ["Accelerometer", "EMI", "Mic", "Motion", "Temperature", "Barometer", "Humidity", "Wifi", "Color", "Illuminescence", "Geye", "Magnetometer"];
     
     let depotManager = GVBuildingDepotManager.sharedInstance()
 

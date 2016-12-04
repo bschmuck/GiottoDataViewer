@@ -8,10 +8,18 @@
 
 import UIKit
 
+
+protocol GVPrivacySettingTableViewCellDelegate {
+    func didTurnPrivacyOn(cell: GVPrivacySettingTableViewCell);
+    func didTurnPrivacyOff(cell: GVPrivacySettingTableViewCell);
+}
+
 class GVPrivacySettingTableViewCell: UITableViewCell {
     
     @IBOutlet weak var settingLabel: UILabel!
     @IBOutlet weak var settingSwitch: UISwitch!
+    
+    var delegate: GVPrivacySettingTableViewCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,4 +32,14 @@ class GVPrivacySettingTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func togglePrivacy(_ sender: Any) {
+        let privacySetting = sender as? UISwitch
+        if let state = privacySetting?.isOn {
+            if state {
+                self.delegate?.didTurnPrivacyOn(cell: self)
+            } else {
+                self.delegate?.didTurnPrivacyOff(cell: self)
+            }
+        }
+    }
 }

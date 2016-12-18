@@ -24,7 +24,7 @@ class GVRequest: NSObject {
         let server = GVUserPreferences.sharedInstance().giottoServer
         let port = GVUserPreferences.sharedInstance().giottoPort
         let apiPrefix = GVUserPreferences.sharedInstance().apiPrefix
-        let urlString = "https://bd-exp.andrew.cmu.edu:81/api/sensor"
+        let urlString = "http://google-demo.andrew.cmu.edu:81/api/sensor"
         //let urlString =  "\(server!):\(port!)\(apiPrefix!)\(endpoint)"
         return urlString
     }

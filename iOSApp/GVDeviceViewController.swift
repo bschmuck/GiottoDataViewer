@@ -13,9 +13,12 @@ class GVDeviceViewController: UIViewController, UITableViewDelegate, UITableView
     //var device: GVDevice?
 
     @IBOutlet weak var deviceLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
+//    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var settingsTableView: UITableView!
     
+    @IBOutlet weak var channelNumberLabel: UILabel!
+    @IBOutlet weak var sensorImageView: UIImageView!
+    @IBOutlet weak var sensorType: UILabel!
     let privacySettings = ["Min", "Max", "Sum", "Avg", "Stdvar", "Range", "Centroid"]
     
     
@@ -23,11 +26,21 @@ class GVDeviceViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         let deviceInfo = GVSelectedDeviceInfo.sharedInstance
         
-
-   
+        self.deviceLabel.layer.masksToBounds = false;
+        self.deviceLabel.layer.shadowOffset = CGSize(width: -5, height: 2)
+        self.deviceLabel.layer.shadowRadius = 3;
+        self.deviceLabel.layer.shadowOpacity = 0.5;
+        
+        sensorImageView.contentMode = .scaleAspectFit
         
         if let name = deviceInfo.deviceName, let sensor = deviceInfo.sensorType, let channel = deviceInfo.channel {
-            deviceLabel.text = "SuperSensor_\(name)_\(sensor)_\(channel)"
+            deviceLabel.text = "SuperSensor \(name)"
+            sensorType.text = sensor
+            channelNumberLabel.text = "Channel \(channel)"
+            let deviceImage = "\(sensor)Icon"
+            if let image = UIImage(named: deviceImage) {
+                sensorImageView.image = image
+            }
         }
         
         settingsTableView.dataSource = self
@@ -43,6 +56,7 @@ class GVDeviceViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.settingsTableView.dequeueReusableCell(withIdentifier: "settingsCell") as! GVPrivacySettingTableViewCell
         cell.settingLabel.text = privacySettings[indexPath.row]
+        cell.selectionStyle = .none
         let deviceInfo = GVSelectedDeviceInfo.sharedInstance
 
         if let name = deviceInfo.deviceName, let sensor = deviceInfo.sensorType, let channel = deviceInfo.channel {

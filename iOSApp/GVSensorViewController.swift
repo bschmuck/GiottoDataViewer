@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import QuartzCore
 
-class GVSensorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class GVSensorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     var devices = [GVDevice]()
 
@@ -23,15 +24,19 @@ class GVSensorViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         searchField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
 
+        self.searchField.layer.masksToBounds = false;
+        self.searchField.layer.shadowOffset = CGSize(width: -5, height: 2)
+        self.searchField.layer.shadowRadius = 5;
+        self.searchField.layer.shadowOpacity = 0.5;
+        
         self.devicesTableView.delegate = self
         self.devicesTableView.dataSource = self
         loadDevices()
-
-        // Do any additional setup after loading the view.
+        searchField.delegate = self
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 60
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,6 +44,24 @@ class GVSensorViewController: UIViewController, UITableViewDelegate, UITableView
             return superSensors.count
         } else {
             return 0;
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let bdManager = GVBuildingDepotManager.sharedInstance()
+        if let deviceArray = bdManager!.fetchSensors(withOwner: "bschmuck@andrew.cmu.edu") {
+            superSensorBuildings = bdManager?.getSuperSensors(deviceArray)
+            superSensors = Array(superSensorBuildings!.keys) as? Array<String>
+            
+            self.devices.removeAll()
+            for device in deviceArray {
+                if let device = device as? GVDevice {
+                    self.devices.append(device)
+                    GVSelectedDeviceInfo.sharedInstance.deviceDict[device.name] = device
+                }
+            }
+            self.devicesTableView.reloadData()
         }
     }
     
@@ -78,6 +101,12 @@ class GVSensorViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -101,12 +130,13 @@ class GVSensorViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     @IBAction func searchByUser(_ sender: AnyObject) {
+        self.searchField.resignFirstResponder()
         if let text = searchField.text {
             let bdManager = GVBuildingDepotManager.sharedInstance()
             if let deviceArray = bdManager!.fetchSensors(withOwner: text) {
                 superSensorBuildings = bdManager?.getSuperSensors(deviceArray)
                 superSensors = Array(superSensorBuildings!.keys) as? Array<String>
-            
+                
                 self.devices.removeAll()
                 for device in deviceArray {
                     if let device = device as? GVDevice {

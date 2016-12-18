@@ -26,7 +26,7 @@ class GVSelectedDeviceInfo: NSObject {
             "Temperature" : 1,
             "Barometer" : 1,
             "Humidity" : 1,
-            "Illuminescence" : 1,
+            "Illumination" : 1,
             "Color" : 3,
             "Magnetometer" : 3,
             "Wifi" : 1,

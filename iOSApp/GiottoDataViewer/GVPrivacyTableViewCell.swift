@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol GVPrivacyTableViewCellDelegate {
+    func userToggledSensor(sensor: String, state: Bool)
+}
+
 class GVPrivacyTableViewCell: UITableViewCell {
     @IBOutlet weak var sensorLabel: UILabel!
     @IBOutlet weak var enable: UISwitch!
+    
+    var delegate: GVPrivacyTableViewCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,4 +29,7 @@ class GVPrivacyTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func userToggledSensor(_ sender: Any) {
+        self.delegate?.userToggledSensor(sensor: self.sensorLabel.text!, state: self.enable.isOn)
+    }
 }

@@ -17,8 +17,8 @@ class GVButton: UIButton {
         // Drawing code
         super.draw(rect)
         self.backgroundColor = UIColor.clear
-        self.layer.cornerRadius = 5
-        self.layer.borderWidth = 3
-        self.layer.borderColor = UIColor.white.cgColor
+//        self.layer.cornerRadius = 5
+//        self.layer.borderWidth = 3
+//        self.layer.borderColor = UIColor.white.cgColor
     }
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4D156EA81C9EB643004FC000 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156EA71C9EB643004FC000 /* main.m */; };
 		4D156EB41C9EB643004FC000 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D156EB21C9EB643004FC000 /* Main.storyboard */; };
-		4D156EB61C9EB643004FC000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D156EB51C9EB643004FC000 /* Assets.xcassets */; };
 		4D156EB91C9EB643004FC000 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D156EB71C9EB643004FC000 /* LaunchScreen.storyboard */; };
 		4D156ED31C9EEA1B004FC000 /* GVBuildingDepotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156ED01C9EEA1B004FC000 /* GVBuildingDepotManager.m */; };
 		4D156ED41C9EEA1B004FC000 /* GVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D156ED21C9EEA1B004FC000 /* GVLocationManager.m */; };
@@ -42,6 +41,8 @@
 		EE2AFC8AB6196822C103D915 /* libPods-GiottoDataViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80559930C0759415B283C3AA /* libPods-GiottoDataViewer.a */; };
 		F0150F751DC3D40B0002F5AB /* GVRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0150F741DC3D40B0002F5AB /* GVRequest.swift */; };
 		F02495291DEA889E009641F3 /* GVNodeServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02495281DEA889E009641F3 /* GVNodeServerManager.swift */; };
+		F027D38B1E04655200B7D069 /* GVNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F027D38A1E04655200B7D069 /* GVNavigationViewController.swift */; };
+		F027D38D1E06F19C00B7D069 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F027D38C1E06F19C00B7D069 /* Assets.xcassets */; };
 		F030D85B1DE724D4009F1EDF /* GVSensorTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F030D85A1DE724D4009F1EDF /* GVSensorTypeTableViewController.swift */; };
 		F030D85D1DE72528009F1EDF /* GVTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F030D85C1DE72528009F1EDF /* GVTypeCell.swift */; };
 		F030D85F1DE726DD009F1EDF /* GVSelectedDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F030D85E1DE726DD009F1EDF /* GVSelectedDeviceInfo.swift */; };
@@ -52,6 +53,7 @@
 		F06301341DCE5517007E543A /* GVSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06301331DCE5517007E543A /* GVSensorViewController.swift */; };
 		F06301361DCE5728007E543A /* GVDeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06301351DCE5728007E543A /* GVDeviceTableViewCell.swift */; };
 		F06301381DCE70A0007E543A /* GVButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06301371DCE70A0007E543A /* GVButton.swift */; };
+		F0AF5DA21E00856900EBA8E9 /* QVQRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF5DA11E00856900EBA8E9 /* QVQRScanViewController.swift */; };
 		F0C9AA171DBD09A8005A95EB /* GVPrivacyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9AA161DBD09A8005A95EB /* GVPrivacyTableViewCell.swift */; };
 		F0E523691DCE2B71005D546B /* GVLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E523681DCE2B71005D546B /* GVLoginViewController.swift */; };
 		F0E855091DB3220900E4E238 /* GVAddDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E855081DB3220900E4E238 /* GVAddDeviceViewController.swift */; };
@@ -63,7 +65,6 @@
 		4D156EA31C9EB643004FC000 /* GIoTTO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIoTTO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D156EA71C9EB643004FC000 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4D156EB31C9EB643004FC000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4D156EB51C9EB643004FC000 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D156EB81C9EB643004FC000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D156ECF1C9EEA1B004FC000 /* GVBuildingDepotManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GVBuildingDepotManager.h; path = GiottoDataViewer/Managers/GVBuildingDepotManager.h; sourceTree = "<group>"; };
 		4D156ED01C9EEA1B004FC000 /* GVBuildingDepotManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GVBuildingDepotManager.m; path = GiottoDataViewer/Managers/GVBuildingDepotManager.m; sourceTree = "<group>"; };
@@ -130,6 +131,8 @@
 		80559930C0759415B283C3AA /* libPods-GiottoDataViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GiottoDataViewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0150F741DC3D40B0002F5AB /* GVRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVRequest.swift; sourceTree = "<group>"; };
 		F02495281DEA889E009641F3 /* GVNodeServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVNodeServerManager.swift; sourceTree = "<group>"; };
+		F027D38A1E04655200B7D069 /* GVNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVNavigationViewController.swift; sourceTree = "<group>"; };
+		F027D38C1E06F19C00B7D069 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = GiottoDataViewer/Assets.xcassets; sourceTree = "<group>"; };
 		F030D85A1DE724D4009F1EDF /* GVSensorTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVSensorTypeTableViewController.swift; sourceTree = "<group>"; };
 		F030D85C1DE72528009F1EDF /* GVTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVTypeCell.swift; sourceTree = "<group>"; };
 		F030D85E1DE726DD009F1EDF /* GVSelectedDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVSelectedDeviceInfo.swift; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 		F06301331DCE5517007E543A /* GVSensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVSensorViewController.swift; sourceTree = "<group>"; };
 		F06301351DCE5728007E543A /* GVDeviceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVDeviceTableViewCell.swift; sourceTree = "<group>"; };
 		F06301371DCE70A0007E543A /* GVButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVButton.swift; sourceTree = "<group>"; };
+		F0AF5DA11E00856900EBA8E9 /* QVQRScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QVQRScanViewController.swift; sourceTree = "<group>"; };
 		F0C9AA161DBD09A8005A95EB /* GVPrivacyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVPrivacyTableViewCell.swift; sourceTree = "<group>"; };
 		F0E523681DCE2B71005D546B /* GVLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GVLoginViewController.swift; sourceTree = "<group>"; };
 		F0E855071DB3220800E4E238 /* GiottoDataViewer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GiottoDataViewer-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				4D156EC01C9EE687004FC000 /* ViewControllers */,
 				4D156EA51C9EB643004FC000 /* GiottoDataViewer */,
 				4D297AA71C9F48DD0033C887 /* Utilities */,
+				F027D38C1E06F19C00B7D069 /* Assets.xcassets */,
 				4D156EA41C9EB643004FC000 /* Products */,
 				BCFEDAB9E1A66F38267C3105 /* Pods */,
 				1C3B407B4F15F1B78536CFB9 /* Frameworks */,
@@ -200,7 +205,6 @@
 				4D9BD03F1CA076A6008C02A1 /* GVUserPreferences.m */,
 				F0C9AA161DBD09A8005A95EB /* GVPrivacyTableViewCell.swift */,
 				4D156EB21C9EB643004FC000 /* Main.storyboard */,
-				4D156EB51C9EB643004FC000 /* Assets.xcassets */,
 				4D156EB71C9EB643004FC000 /* LaunchScreen.storyboard */,
 				4D156EA61C9EB643004FC000 /* Supporting Files */,
 			);
@@ -249,11 +253,13 @@
 				F030D85C1DE72528009F1EDF /* GVTypeCell.swift */,
 				F030D8621DE7281C009F1EDF /* GVChannelCell.swift */,
 				4D297AB11C9F4A540033C887 /* GVAreaGraphViewController.h */,
+				F0AF5DA11E00856900EBA8E9 /* QVQRScanViewController.swift */,
 				4D297AB21C9F4A540033C887 /* GVAreaGraphViewController.m */,
 				F04FFD421DD77EC70012E839 /* GVPrivacySettingTableViewCell.swift */,
 				F0E855081DB3220900E4E238 /* GVAddDeviceViewController.swift */,
 				F04FFD3E1DD77BDF0012E839 /* GVDeviceViewController.swift */,
 				F06301351DCE5728007E543A /* GVDeviceTableViewCell.swift */,
+				F027D38A1E04655200B7D069 /* GVNavigationViewController.swift */,
 				F030D8641DE72861009F1EDF /* GVChannelTableViewController.swift */,
 				F0E523681DCE2B71005D546B /* GVLoginViewController.swift */,
 				F06301331DCE5517007E543A /* GVSensorViewController.swift */,
@@ -436,7 +442,7 @@
 				TargetAttributes = {
 					4D156EA21C9EB643004FC000 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 729M7KPK2R;
+						DevelopmentTeam = W2K89DDM88;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -470,7 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D156EB91C9EB643004FC000 /* LaunchScreen.storyboard in Resources */,
-				4D156EB61C9EB643004FC000 /* Assets.xcassets in Resources */,
+				F027D38D1E06F19C00B7D069 /* Assets.xcassets in Resources */,
 				4D156EB41C9EB643004FC000 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,7 +552,9 @@
 				4D156EED1C9F1A2F004FC000 /* GVDeviceTableViewCell.m in Sources */,
 				4D156EF41C9F1A39004FC000 /* GVLogDetailViewController.m in Sources */,
 				4D297AA01C9F46610033C887 /* JBChartInformationView.m in Sources */,
+				F0AF5DA21E00856900EBA8E9 /* QVQRScanViewController.swift in Sources */,
 				4D156EE01C9EFA47004FC000 /* GVDevice.m in Sources */,
+				F027D38B1E04655200B7D069 /* GVNavigationViewController.swift in Sources */,
 				F030D85B1DE724D4009F1EDF /* GVSensorTypeTableViewController.swift in Sources */,
 				F06301381DCE70A0007E543A /* GVButton.swift in Sources */,
 				4D297A9C1C9F45FA0033C887 /* JBLineChartFooterView.m in Sources */,
@@ -687,11 +695,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 729M7KPK2R;
+				DEVELOPMENT_TEAM = W2K89DDM88;
 				INFOPLIST_FILE = GiottoDataViewer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.iotexpedition.ios.giottodataviewer2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bschmuck.ios.giottodataviewer2;
 				PRODUCT_NAME = GIoTTO;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GiottoDataViewer-Bridging-Header.h";
@@ -708,11 +716,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 729M7KPK2R;
+				DEVELOPMENT_TEAM = W2K89DDM88;
 				INFOPLIST_FILE = GiottoDataViewer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.iotexpedition.ios.giottodataviewer2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bschmuck.ios.giottodataviewer2;
 				PRODUCT_NAME = GIoTTO;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GiottoDataViewer-Bridging-Header.h";

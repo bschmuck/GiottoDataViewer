@@ -29,7 +29,7 @@ class GVNodeServerManager: NSObject {
     }
     
     func getPrivacySettings(deviceID: String, completion: @escaping (Bool) -> Void) {
-        let requestString = "https://bd-exp.andrew.cmu.edu:81/api/sensor/\(deviceID)/tags"
+        let requestString = "http://google-demo.andrew.cmu.edu:81/api/sensor/\(deviceID)/tags"
         let depotManager = GVBuildingDepotManager.sharedInstance()
         let request = GVRequest.urlRequest(urlString: requestString, token: depotManager!.accessToken, httpMethod: .GET, data: nil as Dictionary<String, AnyObject>?)
         GVRequest.urlSession(request: request, callback: { (data, error) in
@@ -54,8 +54,109 @@ class GVNodeServerManager: NSObject {
         })
     }
     
+    
+//    {
+//    'data': [{
+//    'name': 'DeviceID',
+//    'value': '3d001c000547343339373536'
+//    }, {
+//    'name': 'SensorID',
+//    'value': '1'
+//    }, {
+//    'name': 'ChannelID',
+//    'value': '0'
+//    }, {
+//    'name': 'StatID',
+//    'value': '4'
+//    }, {
+//    'name': 'UserID',
+//    'value': 'SuperSensor_SYN003'
+//    }, {
+//    'name': 'Access',
+//    'value': 'Allow'
+//    }]
+//    }
+//    
+    
+    func updateTags(with dict: Dictionary<String, AnyObject>, deviceID: String) {
+        let requestString = "http://google-demo.andrew.cmu.edu:81/api/sensor/\(deviceID)/tags"
+        
+        let depotManager = GVBuildingDepotManager.sharedInstance()
+        let request = GVRequest.urlRequest(urlString: requestString, token: depotManager!.accessToken, httpMethod: .POST, data: dict as Dictionary<String, AnyObject>?)
+        GVRequest.urlSession(request: request, callback: { (data, error) in
+        if((error) != nil) {
+            print("Error Occurred: \(error)")
+        } else {
+            print("Successfully updated privacy setting")
+            print(data)
+        }
+        })
+    }
+    
+    func getBuildings(callback: @escaping ([String])->Void) {
+        let requestString = "http://google-demo.andrew.cmu.edu:81/api/building/list"
+        let depotManager = GVBuildingDepotManager.sharedInstance()
+        let request = GVRequest.urlRequest(urlString: requestString, token: depotManager!.accessToken, httpMethod: .GET, data: nil)
+        GVRequest.urlSession(request: request, callback: { (data, error) in
+            if((error) != nil) {
+                print("Error Occurred: \(error)")
+            } else {
+                print("Successfully updated privacy setting")
+                if let buildings = data?["buildings"] as? [String] {
+                    callback(buildings)
+                }
+            }
+        })
+    }
+    
+    //Initializes a tags dictionary on the server for a newly initialized sensor
+    func initTagsDict(forDeviceID deviceID: String, sensorID: String, channelID: String, statID: String, deviceName: String, access: Bool) {
+        
+        var accessString: String?
+        if !access {
+            accessString = "Deny"
+        } else {
+            accessString = "Allow"
+        }
+        
+        let tagsArray = [
+            [
+                "name" : "DeviceID",
+                "value" : deviceID
+            ],
+            [
+                "name" : "SensorID",
+                "value" : statID
+            ],
+            [
+                "name" : "ChannelID",
+                "value" : channelID
+            ],
+            [
+                "name" : "StatID",
+                "value" : statID
+            ],
+            [
+                "name" : "UserID",
+                "value" : "SuperSensor_\(deviceName)"
+            ],
+            [
+                "name" : "Access",
+                "value" : accessString!
+            ]
+        ]
+        
+        let tagsDict = [
+            "data" : tagsArray
+        ]
+        
+        self.updateTags(with: tagsDict as Dictionary<String, AnyObject>, deviceID: deviceID)
+        
+        
+    }
+    
+    //Toggles privacy setting for a sensor
     func updatePrivacySetting(deviceID: String, allow: Bool) {
-        let requestString = "https://bd-exp.andrew.cmu.edu:81/api/sensor/\(deviceID)/tags"
         
         var allowString = "Allow"
         if !allow {
@@ -64,17 +165,7 @@ class GVNodeServerManager: NSObject {
         
         let data = [ "data" : [["name" : "Access", "value" : allowString]]];
         
-        let depotManager = GVBuildingDepotManager.sharedInstance()
-
-        let request = GVRequest.urlRequest(urlString: requestString, token: depotManager!.accessToken, httpMethod: .POST, data: data as Dictionary<String, AnyObject>?)
-        GVRequest.urlSession(request: request, callback: { (data, error) in
-            if((error) != nil) {
-                print("Error Occurred: \(error)")
-            } else {
-                print("Successfully updated privacy setting")
-                print(data)
-            }
-        })
+        self.updateTags(with: data as Dictionary<String, AnyObject>, deviceID: deviceID)
         
     }
     
@@ -82,7 +173,6 @@ class GVNodeServerManager: NSObject {
     func getToken() {
         let request = GVRequest.urlRequest(urlString: "http://128.2.113.41:8080/oauth/token", token: nil, httpMethod: .POST, data: nil)
         
-        //INSERT PASSWORD HERE
         let post = "grant_type=password&username=synergylabscmu@gmail.com&password="
         
         var postData = post.data(using: String.Encoding.ascii, allowLossyConversion: true)

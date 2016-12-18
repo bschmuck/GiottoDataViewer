@@ -10,7 +10,7 @@ import UIKit
 
 class GVSensorTypeTableViewController: UITableViewController {
     
-    var sensorCells = ["Accelerometer", "EMI", "Mic", "Motion", "Temperature", "Barometer", "Humidity", "Wifi", "Color", "Illuminescence", "Geye", "Magnetometer"];
+    var sensorCells = ["Accelerometer", "EMI", "Mic", "Motion", "Temperature", "Barometer", "Humidity", "Wifi", "Color", "Illumination", "Geye", "Magnetometer"];
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,12 +55,20 @@ class GVSensorTypeTableViewController: UITableViewController {
         if sensor.contains("Channel") {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "ChannelCell") as! GVChannelCell
             cell.channelNumberLabel.text = sensor
+            cell.backgroundColor = UIColor.clear
             cell.selectionStyle = .none
             return cell
         } else {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "TypeCell") as! GVTypeCell
             cell.sensorTypeLabel.text = sensor
-            cell.selectionStyle = .none
+//            cell.layer.shadowOpacity = 1.0
+//            cell.layer.shadowRadius = 0.5
+//            cell.layer.shadowOffset = CGSize(width: 0, height: 2)
+//            cell.clipsToBounds = false
+//            cell.layer.masksToBounds = false
+//            cell.layoutSubviews()
+//            cell.backgroundColor = UIColor.clear
+//            cell.sensorTypeLabel.shadowColor = nil
 
             if indexPath.row < sensorCells.count - 1 {
                 let following = sensorCells[indexPath.row + 1]
